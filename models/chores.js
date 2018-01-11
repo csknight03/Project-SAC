@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
     var Chore = sequelize.define("Chore", {
         chore: {
-            type: datatype.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         date_entered: {
