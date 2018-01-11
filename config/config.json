@@ -6,6 +6,7 @@
         "host": "us-cdbr-iron-east-05.cleardb.net",
         "dialect": "mysql"
     },
+    
     "test": {
         "username": "root",
         "password": null,
