@@ -8,6 +8,7 @@
     "express": "^4.16.2",
     "mysql2": "^1.5.1",
     "scrollme": "^0.1.1",
+    "scrollreveal": "^3.3.6",
     "sequelize": "^4.31.0",
     "sequelize-cli": "^3.2.0"
   },
