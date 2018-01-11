@@ -27,18 +27,7 @@ $(window).scroll(function () {
         $(".fourth-image").fadeIn("slow")
     }
 
-    if ($(this).scrollTop() > 1150) {
-        $(".chore-quote-1").fadeOut("slow")
-    }
 
-
-    if ($(this).scrollTop() < 1100) {
-        $(".chore-quote-1").fadeIn("slow")
-    }
-
-    if ($(this).scrollTop() < 1100) {
-        $(".chore-quote-2").fadeIn("slow")
-    }
 
 
 });
