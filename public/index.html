@@ -37,8 +37,21 @@
                     <p class="website-title-subtext">
                         <span class="Header-title--home">A better way to delagate</span></p>
                         <div class="row">
-                            <div class="col-6 text-right"><button type="button" class="btn btn-secondary">New Family</button></div>
-                            <div class="col-6 text-left"><button type="button" class="btn btn-secondary">Join Family</button></div>
+                           <div class="col-6 text-right"><a href="/families"> <button type="button" class="btn btn-secondary">New Family</button></a></div>
+                            <div class="col-6 text-left"><button type="button" class="btn btn-secondary" id="joinExisting">Join Family</button></div>
+                        </div>
+                        <br>
+                        <div class="row" id="join-existing">
+                            <div class="col-12">
+                                    <form>
+                                            <div class="form-group">
+                                              <label for="joinCode">Join Code</label>
+                                              <input type="text" class="form-control" id="joinCode" placeholder="xTfd8DeY78iJl893DEF">
+                                              <small id="emailHelp" class="form-text text-muted">please enter in the join code that you were provided with</small>
+                                            </div>
+                                    </form>
+                            </div>
+
                         </div>
                 </div>
             </div>
