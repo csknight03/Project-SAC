@@ -1,0 +1,79 @@
+#login-page {
+    background: url("https://i0.wp.com/familytech.com/wp-content/uploads/chores-set-kids-up-for-success_ChoreMonster_FamilyTech.jpg?fit=900%2C600") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 88%, 50% 100%, 0 87%, 0 0);
+    clip-path: polygon(50% 0%, 100% 0, 100% 88%, 50% 100%, 0 87%, 0 0);
+}
+
+.website-title {
+    font-size: 10rem;
+    /* font-family: 'Permanent Marker', cursive; */
+    /* font-family: 'Audiowide', cursive; */
+    /* font-family: 'Yellowtail', cursive; */
+    font-family: 'Black Ops One', cursive;
+    font-size: 7rem;
+    line-height: .9em;
+    max-width: 6em;
+    margin-right: 5%;
+    margin-top: 8%;
+}
+
+.Header-title {
+    text-shadow: -0.08em 0 0.2em rgba(34, 51, 68, .4);
+}
+
+.website-title-subtext {
+    color: #DD4F40;
+    font-family: 'Audiowide', cursive;
+    font-size: 2rem;
+}
+
+.btn-secondary {
+    background-color: #DD4F40;
+}
+
+#secondary-background {
+    background-color: #CE5848;
+    -webkit-clip-path: polygon(0 0, 100% 17%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 17%, 100% 100%, 0% 100%);
+    position: relative;
+    z-index: 1
+}
+
+#login {
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.family-image-home {
+    border-radius: 999px;
+    border: 3px solid #C6C6C6;
+    height: 14rem;
+    width: 14rem;
+    z-index: 999!important;
+}
+
+.text-names {
+    color: #DD4F40;
+    z-index: 999;
+}
+
+.chore-quote {
+    color: #C6C6C6;
+    font-weight: bold;
+    font-size: 1.5rem;
+    z-index: 999;
+}
+
+body {
+    z-index: 1
+}
+
+#about-section{
+    position: relative;
+    z-index: 999
+}
