@@ -27,7 +27,11 @@ $(window).scroll(function () {
         $(".fourth-image").fadeIn("slow")
     }
 
-
-
-
 });
+
+$("#join-existing").hide()
+
+
+$("#joinExisting").on("click",function(){
+    $("#join-existing").toggle(1000)
+})
