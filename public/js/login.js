@@ -2,8 +2,11 @@
 
 var loggedInStatus = "false"
 var LocalStorageUID = localStorage.getItem("uid")
-
-
+var LocalStoragePicture = localStorage.getItem("profilePicture")
+var LocalStorageCoverPicture = localStorage.getItem("coverPicture")
+var LocalStorageFirstName = localStorage.getItem("first_name")
+var LocalStorageLastName = localStorage.getItem("last_name")
+var LocalStorageGender = localStorage.getItem("gender")
 
 
 window.fbAsyncInit = function () {
@@ -49,22 +52,6 @@ window.fbAsyncInit = function () {
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-
-
-if (LocalStorageUID === null) {
-    $("#logout").hide()
-    $("#joinButton").hide()
-    $("#createButton").hide()
-
-
-} else {
-    $("#login").hide()
-    $("#loginButton").hide()
-    $("#logout").show()
-    $("#joinButton").show()
-    $("#createButton").show()
-}
-
 $("#login").on("click", function () {
     FB.login(function (response) {
         console.log(response)
@@ -72,52 +59,102 @@ $("#login").on("click", function () {
         console.log("Facebook UID:", uid)
         if (response.status === 'connected') {
             localStorage.setItem("uid", uid);
-        
 
-              FB.api('/me', {fields: 'last_name'}, function(response) {
-                console.log(response);
-                localStorage.setItem("last_name", response.last_name);
-              });
-
-              FB.api('/me', {fields: 'first_name'}, function(response) {
-                console.log(response);
-                localStorage.setItem("first_name", response.first_name);
-              });
-
-              FB.api('/me', {fields: 'picture'}, function(response) {
-                console.log(response);
+            FB.api('/me', {
+                fields: 'last_name'
+            }, function (response) {
+                localStorage.setItem("lastName", response.last_name);
+                LocalStorageLastName = localStorage.getItem("lastName")
+                
+            });
+            FB.api('/me', {
+                fields: 'first_name'
+            }, function (response) {
+                localStorage.setItem("firstName", response.first_name);
+                LocalStorageFirstName = localStorage.getItem("firstName")
+                
+            });
+            FB.api('/me', {
+                fields: 'picture'
+            }, function (response) {
                 localStorage.setItem("profilePicture", response.picture.data.url);
-              });
-
-              FB.api('/me', {fields: 'cover'}, function(response) {
-                console.log(response);
+            LocalStoragePicture = localStorage.getItem("profilePicture")
+                
+            });
+            FB.api('/me', {
+                fields: 'cover'
+            }, function (response) {
                 localStorage.setItem("coverPicture", response.cover.source);
-              });
-
-              FB.api('/me', {fields: 'gender'}, function(response) {
-                console.log(response);
+            LocalStorageCoverPicture = localStorage.getItem("coverPicture")
+                
+            });
+            FB.api('/me', {
+                fields: 'gender'
+            }, function (response) {
                 localStorage.setItem("gender", response.gender);
-              });
+            LocalStorageGender = localStorage.getItem("gender")
+                
+            });
 
-              //location.reload()
+            console.log("FIRST NAME", LocalStorageFirstName)
+            console.log("UID", LocalStorageUID)
+            
+            setTimeout(function(){ location.reload()}, 1500);
 
-        } else {}
-    });
+        } else {
+
+        }
+    })
+
 })
 
 
 $("#logout").on("click", function () {
     localStorage.removeItem("uid");
-    localStorage.removeItem("first_name");
-    localStorage.removeItem("last_name");
+    localStorage.removeItem("firstName");
+    localStorage.removeItem("lastName");
     localStorage.removeItem("profilePicture");
     localStorage.removeItem("coverPicture");
+    localStorage.removeItem("gender");
+    localStorage.removeItem("logged");
+
     location.reload()
+
     // FB.logout(function (response) {
-        
+
     // });
 
+
 })
+
+
+
+
+
+
+
+$( document ).ready(function() {
+    if (LocalStorageUID === null) {
+        $("#logout").hide()
+        $("#joinButton").hide()
+        $("#createButton").hide()
+        $("#dashboardButton").hide()
+    
+    
+    } else {
+    
+    
+        $("#login").hide()
+        $("#loginButton").hide()
+        $("#logout").show()
+        $("#joinButton").show()
+        $("#createButton").show()
+        $("#dashboardButton").show()
+        
+        var welcomeString = "Welcome, " + localStorage.getItem("firstName") +" "+ localStorage.getItem("lastName")+"!";
+        $("#header-subtext").text(welcomeString)
+    }
+});
 
 ////////////////////////////////////////////////////////////////////////////
 
@@ -130,17 +167,25 @@ $(window).scroll(function () {
         console.log("Less than 500")
     }
     if ($(this).scrollTop() > 700) {
-        $(".first-image").animate({ 'opacity': '0' }, 1000);
+        $(".first-image").animate({
+            'opacity': '0'
+        }, 1000);
     }
     if ($(this).scrollTop() > 800) {
-        $(".second-image").animate({ 'opacity': '0' }, 1000);
+        $(".second-image").animate({
+            'opacity': '0'
+        }, 1000);
     }
     if ($(this).scrollTop() > 900) {
-        $(".third-image").animate({ 'opacity': '0' }, 1000);
+        $(".third-image").animate({
+            'opacity': '0'
+        }, 1000);
     }
 
     if ($(this).scrollTop() > 900) {
-        $(".fourth-image").animate({ 'opacity': '0' }, 1000);
+        $(".fourth-image").animate({
+            'opacity': '0'
+        }, 1000);
     }
 
 
