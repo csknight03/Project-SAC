@@ -26,6 +26,7 @@ window.fbAsyncInit = function () {
             var accessToken = response.authResponse.accessToken;
             localStorage.setItem("uid", uid);
             console.log("FACEBOOK UID IS:", uid)
+            console.log(response)
 
         } else if (response.status === 'not_authorized') {
 
@@ -67,6 +68,7 @@ if (LocalStorageUID === null) {
 
 $("#login").on("click", function () {
     FB.login(function (response) {
+        console.log(response)
         var uid = response.authResponse.userID;
         console.log("Facebook UID:", uid)
         if (response.status === 'connected') {
