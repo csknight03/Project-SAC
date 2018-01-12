@@ -69,6 +69,7 @@ $("#formSubmit").on("click", function () {
             var uuid = guid();
             $("#familyCode").show()
             $("#guidNumber").text(uuid)
+            $("#backToHome").animate({ 'opacity': '1' }, 1000);
         } else {
             console.log("Empty email")
             $("#family-email").addClass("error")
@@ -85,3 +86,11 @@ $("#formSubmit").on("click", function () {
 })
 
 ///////////////////////////////////////////////////////////////////////////////////////////
+
+function clipBoardCopy() {
+    var copyText = document.getElementById("guidNumber");
+    copyText.select();
+    document.execCommand("Copy");
+    alert("Copied the text: " + copyText.value);
+  }
+

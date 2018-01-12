@@ -97,19 +97,23 @@ $(window).scroll(function () {
         console.log("Less than 500")
     }
     if ($(this).scrollTop() > 700) {
-        $(".first-image").fadeOut("slow")
+        $(".first-image").animate({ 'opacity': '0' }, 1000);
     }
     if ($(this).scrollTop() > 800) {
-        $(".second-image").fadeOut("slow")
+        $(".second-image").animate({ 'opacity': '0' }, 1000);
     }
     if ($(this).scrollTop() > 900) {
-        $(".third-image").fadeOut("slow")
+        $(".third-image").animate({ 'opacity': '0' }, 1000);
+    }
+
+    if ($(this).scrollTop() > 900) {
+        $(".fourth-image").animate({ 'opacity': '0' }, 1000);
     }
 
 
 
     if ($(this).scrollTop() < 700) {
-        $(".first-image").fadeIn("slow")
+        $(".image-first").fadeIn("slow")
     }
     if ($(this).scrollTop() < 800) {
         $(".second-image").fadeIn("slow")
