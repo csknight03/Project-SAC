@@ -71,6 +71,7 @@ $("#login").on("click", function () {
         console.log("Facebook UID:", uid)
         if (response.status === 'connected') {
             localStorage.setItem("uid", uid);
+            location.reload()
         } else {}
     });
 })
@@ -78,7 +79,7 @@ $("#login").on("click", function () {
 
 $("#logout").on("click", function () {
     localStorage.removeItem("uid");
-    
+    location.reload()
     // FB.logout(function (response) {
         
     // });
