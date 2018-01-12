@@ -109,3 +109,8 @@
   .button.active .bottom {
     margin: 14px 0 0 12px;
   }
+
+  .error{
+    border: 3px solid red;
+    color: red;
+  }
