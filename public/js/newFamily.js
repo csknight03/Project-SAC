@@ -1,23 +1,35 @@
 $("#familyCode").hide()
 
+/////////////////////////// SUBMIT BUTTON STUFFS  ////////////////////////////////////////
+
+// different functinos for the different states
+
+
 function hover() {
     $(".button").on("mouseenter", function () {
         return $(this).addClass("hover");
     });
 }
-
 function hoverOff() {
     $(".button").on("mouseleave", function () {
         return $(this).removeClass("hover");
     });
 }
-
 function active() {
     $(".button").on("click", function () {
         return $(this).addClass("active");
     });
 }
 
+hover();
+hoverOff();
+active();
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+///////////////////////////  RANDOM GUID CREATION ///////////////////////////////////
 function guid() {
     function s4() {
         return Math.floor((1 + Math.random()) * 0x10000)
@@ -27,11 +39,18 @@ function guid() {
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
         s4() + '-' + s4() + s4() + s4();
 }
+////////////////////////////////////////////////////////////////////////////
 
-hover();
-hoverOff();
-active();
 
+
+
+
+
+//////////////////////////  FORM SUBMITION  ///////////////////////////////
+
+// submits the form
+// generates a random GUID
+//handles errors for empty fields
 
 $("#formSubmit").on("click", function () {
 
@@ -54,11 +73,15 @@ $("#formSubmit").on("click", function () {
             console.log("Empty email")
             $("#family-email").addClass("error")
             $("#family-email").attr("placeholder", "Please Enter A Valid Email");
+            $(".button").removeClass("active");
         }
     } else {
         console.log("Empty Name")
         $("#family-name").addClass("error")
         $("#family-name").attr("placeholder", "Please Enter A Valid Name");
+        $(".button").removeClass("active");
     }
 
 })
+
+///////////////////////////////////////////////////////////////////////////////////////////
