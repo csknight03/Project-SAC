@@ -16,4 +16,8 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/newFamily.html"));
   });
 
+  app.get("/dashboard", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/dashboard.html"));
+  });
+
 };

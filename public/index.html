@@ -17,9 +17,14 @@
 
 <body>
 
+    
+
     <div id="login-page">
         <div class="row">
-            <div class="col-md-6"><div class="col-md-6 text-left"><button type="button" class="btn btn-secondary" id="login">Login</button></div></div>
+            <div class="col-md-6"><div class="col-md-6 text-left">
+
+                <button type="button" class="btn btn-secondary" id="logout" scope="public_profile,email" onlogin="checkLoginState();">Logout</button>
+            </div></div>
             <div class="col-sm-12 col-md-6 text-center">
                 <h1 class="text-white website-title animation-target">
                     <span class="Header-title">S</span><span class="Header-title">i</span><span class="Header-title">m</span><span class="Header-title">p</span><span class="Header-title">l</span><span class="Header-title">y</span>
@@ -36,8 +41,9 @@
                     <p class="website-title-subtext">
                         <span class="Header-title--home">A better way to delagate</span></p>
                         <div class="row">
-                           <div class="col-6 text-right"><a href="/families"> <button type="button" class="btn btn-secondary">New Family</button></a></div>
-                            <div class="col-6 text-left"><button type="button" class="btn btn-secondary" id="joinExisting">Join Family</button></div>
+                           <div class="col-6 text-right" id="createButton"><a href="/families"> <button type="button" class="btn btn-secondary">New Family</button></a></div>
+                            <div class="col-6 text-left" id="joinButton"><button type="button" class="btn btn-secondary" id="joinExisting">Join Family</button></div>
+                            <div class="col-12" id="loginButton"><button type="button" class="btn btn-secondary" id="login" scope="public_profile,email" onlogin="checkLoginState();">Login</button></div>
                         </div>
                         <br>
                         <div class="row" id="join-existing">
