@@ -72,7 +72,35 @@ $("#login").on("click", function () {
         console.log("Facebook UID:", uid)
         if (response.status === 'connected') {
             localStorage.setItem("uid", uid);
-            location.reload()
+        
+
+              FB.api('/me', {fields: 'last_name'}, function(response) {
+                console.log(response);
+                localStorage.setItem("last_name", response.last_name);
+              });
+
+              FB.api('/me', {fields: 'first_name'}, function(response) {
+                console.log(response);
+                localStorage.setItem("first_name", response.first_name);
+              });
+
+              FB.api('/me', {fields: 'picture'}, function(response) {
+                console.log(response);
+                localStorage.setItem("profilePicture", response.picture.data.url);
+              });
+
+              FB.api('/me', {fields: 'cover'}, function(response) {
+                console.log(response);
+                localStorage.setItem("coverPicture", response.cover.source);
+              });
+
+              FB.api('/me', {fields: 'gender'}, function(response) {
+                console.log(response);
+                localStorage.setItem("gender", response.gender);
+              });
+
+              //location.reload()
+
         } else {}
     });
 })
@@ -80,6 +108,10 @@ $("#login").on("click", function () {
 
 $("#logout").on("click", function () {
     localStorage.removeItem("uid");
+    localStorage.removeItem("first_name");
+    localStorage.removeItem("last_name");
+    localStorage.removeItem("profilePicture");
+    localStorage.removeItem("coverPicture");
     location.reload()
     // FB.logout(function (response) {
         
