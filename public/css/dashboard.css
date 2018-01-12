@@ -1,0 +1,89 @@
+#header {
+    background-color: #F0F0F0;
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 59%, 59% 52%, 0 41%, 0 0);
+    clip-path: polygon(50% 0%, 100% 0, 100% 59%, 59% 52%, 0 41%, 0 0);
+    min-height: 405px;
+    font-family: 'Bungee', cursive;
+}
+
+.bg-secondary{
+    background-color: #F0F0F0!important;
+}
+
+.card{
+    color: #CE5848!important;
+}
+
+.title{
+    margin-top: 50px;
+    color: #CE5848;
+    font-family: 'Bungee', cursive;
+    font-size: 4rem;
+}
+
+
+.family-image-dashboard{
+    border-radius: 999px;
+    border: 3px solid #C6C6C6;
+    height: 6rem;
+    width: 6rem;
+    z-index: 999!important;
+}
+
+.userValues{
+    height: 100px;
+}
+
+.userPointValue{
+    color: #CE5848;
+    font-size: 1.5rem;
+    line-height: 1rem;
+}
+
+.userDollarValue{
+    color: green;
+    font-size: 1.5rem;
+    line-height: 1rem;
+}
+
+.ac-custom label {
+    display: inline-block;
+    position: relative;
+    font-size: 1.5em;
+    padding-left: 80px;
+    /* vertical-align: top; */
+    /* color: rgba(0,0,0,0.2); */
+    cursor: pointer;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+
+}
+
+label {
+    display: inline-block;
+    /* margin-bottom: .5rem; */
+   
+}
+
+.ac-custom input[type="checkbox"]:checked + label, .ac-custom input[type="radio"]:checked + label {
+    color: #CE5848;
+ 
+}
+
+.ac-custom li {
+    margin: 0 auto;
+    padding: .2em 0; 
+    position: relative;
+}
+
+
+.ac-custom input[type="checkbox"], .ac-custom input[type="radio"], .ac-custom label::before {
+    background-color: #CE5848;
+}
+
+
+
+
+
+
+
