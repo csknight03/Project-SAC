@@ -26,7 +26,6 @@ window.fbAsyncInit = function () {
             var accessToken = response.authResponse.accessToken;
             localStorage.setItem("uid", uid);
             console.log("FACEBOOK UID IS:", uid)
-            console.log(response)
 
         } else if (response.status === 'not_authorized') {
 
