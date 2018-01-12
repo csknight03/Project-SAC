@@ -79,9 +79,9 @@ $("#login").on("click", function () {
 $("#logout").on("click", function () {
     localStorage.removeItem("uid");
     
-    FB.logout(function (response) {
+    // FB.logout(function (response) {
         
-    });
+    // });
 
 })
 
