@@ -125,11 +125,14 @@
   text-decoration: none;
   position: relative;
   z-index: 999;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Bungee', cursive;
 }
 
 #backToHome a{
   color: inherit;
-  color: white!important;
+  color: #CE5848!important;
   text-decoration: none;
 }
 
@@ -147,6 +150,16 @@ height: 20rem;
 
 #next-steps h1{
   font-weight: bold;
+}
+
+
+#home-button{
+  font-size: 2.5rem;
+  color: white;
+  margin-left: 3%;
+  margin-top: 3%;
+  z-index: 999;
+  position: relative;
 }
 
 
