@@ -108,6 +108,25 @@ label {
   }
 
 
+  .form-label{
+    font-family: 'Bungee', cursive;
+    color: #CE5848;
+  }
+
+  .btn-primary{
+    background-color: white;
+    color: #CE5848;
+    border: 1px solid #CE5848;
+  }
+
+  .btn-primary:hover{
+    background-color: #C6C6C6;
+    color: #CE5848;
+    border: 1px solid #CE5848;
+  }
+
+
+
 
 
 

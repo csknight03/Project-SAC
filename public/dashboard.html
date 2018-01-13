@@ -24,7 +24,11 @@
 
     <div id="header">
         <div class="row">
-            <div class="col-12 text-left"><a href="/"> <i class="fa fa-home" aria-hidden="true" id="home-button"></i></a></div>
+            <div class="col-12 text-left">
+                <a href="/">
+                    <i class="fa fa-home" aria-hidden="true" id="home-button"></i>
+                </a>
+            </div>
         </div>
         <div class="row" style="margin-top: -5%;">
             <div class="col-12">
@@ -34,17 +38,19 @@
     </div>
 
 
-    <div class="row profile-name-fix" >
-        <div class="col-12 text-center"><h1 id="current-profile-name"></h1></div>
+    <div class="row profile-name-fix">
+        <div class="col-12 text-center">
+            <h1 id="current-profile-name"></h1>
+        </div>
     </div>
-    
+
 
 
 
     <div class="row" style="margin-top: -100px;">
 
 
-   <!-- START OF ROUND FAMILY PICTURES ON THE LEFT HAND SIDE -->
+        <!-- START OF ROUND FAMILY PICTURES ON THE LEFT HAND SIDE -->
 
         <div class="col-sm-4 col-md-2 text-center" id="familyPictures" style="border-right: 1px solid grey;">
 
@@ -85,84 +91,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-8">
-                        
-                        <!-- **************   NEW CHORE MODAL  ************** -->
 
 
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
-                                    New Chore
-                                  </button>
-                                  
-                                  <!-- Modal -->
-                                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h5 class="modal-title" id="exampleModalLabel">Create New Chore</h5>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        </div>
-                                        <div class="modal-body">
-                                          
-                                                <!-- MODAL FORM CONTENT TO ADD A NEW CHORE-->
-
-                                                <form>
-                                                        <div class="form-group">
-                                                          <label for="exampleFormControlInput1">Email address</label>
-                                                          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                          <label for="choreAssign">Assign To:</label>
-                                                          <select class="form-control" id="choreAssign">
-
-                                                            <!-- ADD LIST OF FAMILY MEMBERS HERE -->
-                                                            <option>Dad</option>
-                                                            <option>Mom</option>
-                                                            <option>Kid 1</option>
-                                                            <option>Kid 2</option>
-                                                            <option>Kid 3</option>
-
-                                                          </select>
-                                                        </div>
-
-
-                                                        <div class="form-group">
-                                                          <label for="priority">Example multiple select</label>
-                                                          <select multiple class="form-control" id="priority">
-                                                            <option>Important</option>
-                                                            <option>Kind of Important</option>
-                                                            <option>Not Important</option>
-                                                          </select>
-                                                        </div>
-
-
-                                                        <div class="form-group">
-                                                          <label for="choreMessage">Describe your Chore:</label>
-                                                          <textarea class="form-control" id="choreMessage" rows="3"></textarea>
-                                                        </div>
-                                                      </form>
-
-
-                                                      <!-- END OF MODAL FORM CONTENT FOR A NEW CHORE ADDITION -->
-                                        </div>
-
-
-
-                                        <!-- CHORSE SUBMIT BUTTON -->
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                          <button type="button" class="btn btn-primary">Save changes</button>
-                                        </div>
-
-
-
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <!-- END OF FULL MODAL -->
 
 
 
@@ -220,43 +150,140 @@
                     <div class="col-4">
                         <div class="row">
 
+                            <div class="col-12 text-center">
+
+
+                                <!-- **************   NEW CHORE MODAL  ************** -->
+
+
+                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                                        <i class="fa fa-plus" aria-hidden="true"></i> New Chore
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Create New Chore</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <!-- MODAL FORM CONTENT TO ADD A NEW CHORE-->
+
+                                                <form>
+
+                                                    <div class="form-group">
+                                                        <label for="choreAssign" class="form-label">Assign To:</label>
+                                                        <select class="form-control" id="choreAssign">
+
+                                                            <!-- ADD LIST OF FAMILY MEMBERS HERE -->
+                                                            <option>Dad</option>
+                                                            <option>Mom</option>
+                                                            <option>Kid 1</option>
+                                                            <option>Kid 2</option>
+                                                            <option>Kid 3</option>
+
+                                                        </select>
+                                                    </div>
+
+
+                                                    <div class="form-group">
+                                                        <label for="priority" class="form-label">Priority</label>
+                                                        <select multiple class="form-control" id="priority">
+                                                            <option>Important</option>
+                                                            <option>Kind of Important</option>
+                                                            <option>Not Important</option>
+                                                        </select>
+                                                    </div>
+
+
+                                                    <div class="form-group">
+                                                        <label for="choreMessage" class="form-label">Describe your Chore:</label>
+                                                        <textarea class="form-control" id="choreMessage" rows="3"></textarea>
+                                                    </div>
+                                                </form>
+
+
+                                                <!-- END OF MODAL FORM CONTENT FOR A NEW CHORE ADDITION -->
+                                            </div>
+
+
+
+                                            <!-- CHORSE SUBMIT BUTTON -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- END OF FULL MODAL -->
+
+
+
+
+                            </div>
+
                             <!-- POINTS SECTION IN THE TOP RIGHT -->
 
-                                <div class="col-6 text-center">
-                                        <div class="card userValues">
-                                            <div class="card-header">
-                                                Points
-                                            </div>
-                                            <div class="card-body">
-                                                <!-- DYNAMICALLY ADD POINTS FROM DATABASE HERE -->
-                                                <p class="userPointValue">2790</p>
-                                            </div>
-                                        </div>
+                            <div class="col-6 text-center">
+                                <br>
+
+                                <div class="card userValues">
+                                    <div class="card-header">
+                                        Points
                                     </div>
-                                    <div class="col-6 text-center">
-                
-                                        <div class="card userValues">
-                                            <div class="card-header">
-                                                Bank
-                                            </div>
-                                            <div class="card-body">
-                                                <!-- CONVERT POINTS TO DOLLAR VALUE HERE -->
-                                                <p class="userDollarValue">$18.90</p>
-                                            </div>
-                                        </div>
+                                    <div class="card-body">
+                                        <!-- DYNAMICALLY ADD POINTS FROM DATABASE HERE -->
+                                        <p class="userPointValue">2790</p>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-6 text-center">
+                                <br>
+
+                                <div class="card userValues">
+                                    <div class="card-header">
+                                        Bank
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- CONVERT POINTS TO DOLLAR VALUE HERE -->
+                                        <p class="userDollarValue">$18.90</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <br>
                         <div class="row">
 
+
                             <!-- BADGES SECTION ON RIGHT HAND SIDE -->
 
-                            <div class="col-12 text-center"><h4 style="color:#CE5848">Badges</h4><hr></div>
+                            <div class="col-12 text-center">
+                                <h4 style="color:#CE5848"><i class="fa fa-trophy" aria-hidden="true"></i> Badges</h4>
+                                <hr>
+                            </div>
 
-                            <div class="col-12 text-center"><span class="badge badge-success">Success</span></div>
-                            <div class="col-12 text-center"><span class="badge badge-success">Success</span></div>
-                            <div class="col-12 text-center"><span class="badge badge-success">Success</span></div>
-                            <div class="col-12 text-center"><span class="badge badge-success">Success</span></div>
+                            <div class="col-12 text-center">
+                                <span class="badge badge-success">Success</span>
+                            </div>
+                            <div class="col-12 text-center">
+                                <span class="badge badge-success">Success</span>
+                            </div>
+                            <div class="col-12 text-center">
+                                <span class="badge badge-success">Success</span>
+                            </div>
+                            <div class="col-12 text-center">
+                                <span class="badge badge-success">Success</span>
+                            </div>
 
                         </div>
                     </div>
@@ -269,22 +296,30 @@
     </div>
 
     <div id="next-steps">
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="row justify-text-center">
-                <div class="col-3"></div>
-                <div class="col-6 text-center"><h1 style="color: #DD4F40">What Now?</h1></div>
-                <hr>
-                </div>
-                <div class="row">
-                    <div class="col-3"></div>
-                <div class="col-6 text-secondary"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi porro reprehenderit voluptate, tenetur, unde doloremque, eum atque totam perferendis veniam itaque neque numquam vel? Temporibus necessitatibus quia harum aspernatur excepturi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil distinctio cum ab quo reprehenderit consectetur nulla, aspernatur praesentium cupiditate illo quibusdam possimus necessitatibus veniam placeat sunt delectus officiis ducimus quasi?</p></div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row justify-text-center">
+            <div class="col-3"></div>
+            <div class="col-6 text-center">
+                <h1 style="color: #DD4F40">What Now?</h1>
             </div>
-            <br>
-            <br>
+            <hr>
         </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6 text-secondary">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi porro reprehenderit voluptate, tenetur, unde
+                    doloremque, eum atque totam perferendis veniam itaque neque numquam vel? Temporibus necessitatibus quia
+                    harum aspernatur excepturi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil distinctio
+                    cum ab quo reprehenderit consectetur nulla, aspernatur praesentium cupiditate illo quibusdam possimus
+                    necessitatibus veniam placeat sunt delectus officiis ducimus quasi?</p>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
     </div>
 
 
@@ -294,9 +329,12 @@
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+        crossorigin="anonymous"></script>
     <script src="./AnimatedCheckboxes/js/svgcheckbx.js"></script>
     <script src="./AnimatedCheckboxes/js/modernizr.custom.js"></script>
     <script src="./js/index.js"></script>
