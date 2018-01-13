@@ -1,9 +1,7 @@
 $("#familyCode").hide()
 
-/////////////////////////// SUBMIT BUTTON STUFFS  ////////////////////////////////////////
-
-// different functinos for the different states
-
+/////////////////////////// SUBMIT BUTTON ANIMATIONS  ////////////////////////////////////////
+// different functions for the different states
 
 function hover() {
     $(".button").on("mouseenter", function () {
@@ -58,9 +56,7 @@ $("#formSubmit").on("click", function () {
     var familyEmail = $("#family-email").val()
 
 
-    console.log("Family Name:", familyName)
-    console.log("Family Email:", familyEmail)
-
+    // error handleing to know if certain fields are empty or not
     if (familyName !== "") {
         $("#family-name").removeClass("error")
         if (familyEmail !== "") {
@@ -82,6 +78,7 @@ $("#formSubmit").on("click", function () {
         $("#family-name").attr("placeholder", "Please Enter A Valid Name");
         $(".button").removeClass("active");
     }
+    //////////////////////  end of error handling ///////////////////
 
 })
 
@@ -93,4 +90,6 @@ function clipBoardCopy() {
     document.execCommand("Copy");
     alert("Copied the text: " + copyText.value);
   }
+
+
 

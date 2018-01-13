@@ -23,9 +23,14 @@
         <div class="row">
             <div class="col-md-6"><div class="col-md-6 text-left">
 
+                <!-- LOGOUT BUTTON -->
                 <button type="button" class="btn btn-secondary" id="logout" scope="public_profile,email" onlogin="checkLoginState();">Logout</button>
             </div></div>
+
+
             <div class="col-sm-12 col-md-6 text-center">
+
+                <!-- ANIMATED TITLE TEXT -->
                 <h1 class="text-white website-title animation-target">
                     <span class="Header-title">S</span><span class="Header-title">i</span><span class="Header-title">m</span><span class="Header-title">p</span><span class="Header-title">l</span><span class="Header-title">y</span>
                     <span class="Header-title">A</span><span class="Header-title">s</span><span class="Header-title">s</span><span class="Header-title">i</span><span class="Header-title">g</span><span class="Header-title">n</span><span class="Header-title">e</span><span class="Header-title">d</span>
@@ -41,12 +46,29 @@
                     <p class="website-title-subtext">
                         <span class="Header-title--home" id="header-subtext">A better way to delegate</span></p>
                         <div class="row">
+
+                            <!-- THREE NAVIGATION BUTTONS THAT APPEAR AFTER LOGIN -->
+
                            <div class="col-4 text-right" id="createButton"><a href="/families"> <button type="button" class="btn btn-secondary">New Family</button></a></div>
                             <div class="col-4 text-center" id="joinButton"><button type="button" class="btn btn-secondary" id="joinExisting">Join Family</button></div>
                             <a href="/dashboard"><div class="col-4 text-right" id="dashboardButton"><button type="button" class="btn btn-secondary" id="dashboard">Dashboard</button></div></a>
-                            <div class="col-12" id="loginButton"><button type="button" class="btn btn-secondary" id="login" scope="public_profile,email" onlogin="checkLoginState();">Login</button></div>
+
+                            <!-- LOGIN BUTTON -->
+                            <div class="col-12 text-center">
+                            <div class="button" id="loginButton">
+                                    <div class="submit" id="login"><h3>Login</h3></div>
+                                    <div class="arrow">
+                                        <div class="top line"></div>
+                                        <div class="bottom line"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
                         <br>
+
+                        <!-- FORM THAT TAKES IN JOIN CODE (APPEARS AFTER LOGIN AND CLICKING ON 'JOIN FAMILY') -->
                         <div class="row" id="join-existing">
                             <div class="col-12">
                                     <form>
