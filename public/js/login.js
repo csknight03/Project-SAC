@@ -53,6 +53,13 @@ window.fbAsyncInit = function () {
 }(document, 'script', 'facebook-jssdk'));
 
 $("#login").on("click", function () {
+
+    $("#loginButton").empty()
+    var loadingImage = $("<img>")
+    loadingImage.addClass("loadingImage")
+    loadingImage.attr("src", "../images/lg.wave-ball-preloader.gif")
+    $("#loginButton").append(loadingImage)
+
     FB.login(function (response) {
         console.log(response)
         var uid = response.authResponse.userID;

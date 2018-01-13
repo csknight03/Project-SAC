@@ -74,13 +74,27 @@
     z-index: 999;
 }
 
-#about-section{
+#about-section {
     position: relative;
     z-index: 999
 }
 
-
-.first-image{
+.first-image {
     opacity: 1;
 }
-  
+
+.btn-secondary {
+    font-size: 1.4rem;
+}
+
+.loadingImage {
+    height: 100px;
+    width: 100px;
+}
+
+#background3 {
+
+}
+
+.points {
+}
