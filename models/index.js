@@ -33,13 +33,13 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-//Models/tables
+// Models/tables
 db.Family = require('../models/family.js')(sequelize, Sequelize);  
 db.User = require('../models/users.js')(sequelize, Sequelize);
 db.Chore = require('../models/chores.js')(sequelize, Sequelize);  
 
 
-//Relations
+// Relations
 db.Chore.belongsTo(db.User);  
 db.User.hasMany(db.Chore);  
 db.User.belongsTo(db.Family);  

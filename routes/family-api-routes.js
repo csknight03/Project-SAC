@@ -1,6 +1,6 @@
-// var db = require("../models");
+var db = require("../models");
 
-module.exports = function(app, db) {
+module.exports = function(app) {
 
     // FIND ALL FAMILIES
   app.get("/api/families", function(req, res) {
