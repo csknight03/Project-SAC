@@ -1,9 +1,13 @@
 #header {
-    background-color: #F0F0F0;
+    /* background-color: #F0F0F0; */
     -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 59%, 59% 52%, 0 41%, 0 0);
     clip-path: polygon(50% 0%, 100% 0, 100% 59%, 59% 52%, 0 41%, 0 0);
     min-height: 405px;
     font-family: 'Bungee', cursive;
+    background: #ADA996;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #F0F0F0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #F0F0F0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 }
 
 .bg-secondary{
