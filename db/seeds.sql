@@ -1,0 +1,3 @@
+INSERT INTO Families (uuid, family_name, createdAt, updatedAt) VALUES ('1234567890', 'Adams', "2018-01-07 15:06:27", "2018-01-07 15:06:27");
+INSERT INTO Users (name, picture_url, points_banked, points_available, completed_tasks, createdAt, updatedAt) VALUES ('Chase', 'picture.com', 100, 1000, 5, "2018-01-07 15:06:27", "2018-01-07 15:06:27");
+INSERT INTO Chores (chore, date_entered, date_completed, due_date, status, chore_value, category, createdAt, updatedAt) VALUES ('Dishes', "2018-01-07 15:06:27", "2018-01-07 15:06:27", "2018-01-07 15:06:27", 'incomplete', 100, 'Kitchen', "2018-01-07 15:06:27", "2018-01-07 15:06:27");
