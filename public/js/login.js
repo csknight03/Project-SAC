@@ -186,46 +186,75 @@ $(document).ready(function () {
 // SCROLL STUFF THAT HIDES THE PICTURES DEPENDING ON HOW MANY PIXELS YOU'VE SCROLLED DOWN
 
 $(window).scroll(function () {
-    // the < 500 here means 'less than 500px'
-    if ($(this).scrollTop() < 500) {
-        console.log("Less than 500")
-    }
-    if ($(this).scrollTop() > 700) {
+    // the < 850 here means 'less than 500px'
+
+
+    if ($(this).scrollTop() > 400) {
         $(".first-image").animate({
-            'opacity': '0'
-        }, 1000);
+            'opacity': '1'
+        }, 1100);
     }
-    if ($(this).scrollTop() > 800) {
+    if ($(this).scrollTop() >400) {
         $(".second-image").animate({
-            'opacity': '0'
-        }, 1000);
+            'opacity': '1'
+        }, 1400);
     }
-    if ($(this).scrollTop() > 900) {
+    if ($(this).scrollTop() > 400) {
         $(".third-image").animate({
-            'opacity': '0'
-        }, 1000);
+            'opacity': '1'
+        }, 1400);
     }
 
-    if ($(this).scrollTop() > 900) {
+    if ($(this).scrollTop() > 400) {
         $(".fourth-image").animate({
-            'opacity': '0'
-        }, 1000);
+            'opacity': '1'
+        }, 1100);
+    }
+
+    if ($(this).scrollTop() > 700) {
+        $(".chore-quote-1").animate({
+            'opacity': '1'
+        }, 1100);
+    }
+
+    if ($(this).scrollTop() > 770) {
+        $(".chore-quote-2").animate({
+            'opacity': '1'
+        }, 1100);
+    }
+
+    if ($(this).scrollTop() > 870) {
+        $(".chore-quote-3").animate({
+            'opacity': '1'
+        }, 1100);
+    }
+
+    if ($(this).scrollTop() > 970) {
+        $(".chore-quote-4").animate({
+            'opacity': '1'
+        }, 1100);
+    }
+
+    if ($(this).scrollTop() > 1270) {
+        $(".points-text").animate({
+            'opacity': '1'
+        }, 1100);
     }
 
 
-
-    if ($(this).scrollTop() < 700) {
-        $(".image-first").fadeIn("slow")
-    }
-    if ($(this).scrollTop() < 800) {
-        $(".second-image").fadeIn("slow")
-    }
-    if ($(this).scrollTop() < 900) {
-        $(".third-image").fadeIn("slow")
-    }
-    if ($(this).scrollTop() < 650) {
-        $(".fourth-image").fadeIn("slow")
-    }
+    // if ($(this).scrollTop() < 700) {
+    //     $(".first-image").remoceClass("hidden")
+    //     $(".first-image").addClass("shown")
+    // }
+    // if ($(this).scrollTop() < 800) {
+    //     $(".second-image").fadeIn("slow")
+    // }
+    // if ($(this).scrollTop() < 900) {
+    //     $(".third-image").fadeIn("slow")
+    // }
+    // if ($(this).scrollTop() < 650) {
+    //     $(".fourth-image").fadeIn("slow")
+    // }
 
 });
 //#######################################################################//
