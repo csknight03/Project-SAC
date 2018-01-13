@@ -79,8 +79,8 @@
     z-index: 999
 }
 
-.first-image {
-    opacity: 1;
+.first-image,.second-image,.third-image,.fourth-image {
+    opacity: 0;
 }
 
 .btn-secondary {
@@ -203,4 +203,17 @@
   
   .button.active .bottom {
     margin: 14px 0 0 12px;
+  }
+
+
+  .fourth-background{
+    background-color: #F0F0F0;
+  }
+
+  .chore-quote-1,.chore-quote-2,.chore-quote-3,.chore-quote-4{
+    opacity: 0;
+  }
+
+  .points-text{
+    opacity: 0;
   }
