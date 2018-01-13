@@ -8,20 +8,29 @@
     <title>SAC | HOME</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
         crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One|Permanent+Marker|Yellowtail" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One|Permanent+Marker|Yellowtail|Quattrocento+Sans|Bungee" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/login.css">
-
 
 </head>
 
 <body>
 
+    
+
     <div id="login-page">
         <div class="row">
-            <div class="col-md-6"><div class="col-md-6 text-left"><button type="button" class="btn btn-secondary" id="login">Login</button></div></div>
+            <div class="col-md-6"><div class="col-md-6 text-left">
+
+                <!-- LOGOUT BUTTON -->
+                <button type="button" class="btn btn-secondary" id="logout" scope="public_profile,email" onlogin="checkLoginState();"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
+            </div></div>
+
+
             <div class="col-sm-12 col-md-6 text-center">
+
+                <!-- ANIMATED TITLE TEXT -->
                 <h1 class="text-white website-title animation-target">
                     <span class="Header-title">S</span><span class="Header-title">i</span><span class="Header-title">m</span><span class="Header-title">p</span><span class="Header-title">l</span><span class="Header-title">y</span>
                     <span class="Header-title">A</span><span class="Header-title">s</span><span class="Header-title">s</span><span class="Header-title">i</span><span class="Header-title">g</span><span class="Header-title">n</span><span class="Header-title">e</span><span class="Header-title">d</span>
@@ -35,18 +44,38 @@
                 <div class="col-md-6"></div>
                 <div class="col-sm-12 col-md-6 text-center">
                     <p class="website-title-subtext">
-                        <span class="Header-title--home">A better way to delagate</span></p>
+                        <span class="Header-title--home" id="header-subtext">A better way to delegate</span></p>
                         <div class="row">
-                           <div class="col-6 text-right"><a href="/families"> <button type="button" class="btn btn-secondary">New Family</button></a></div>
-                            <div class="col-6 text-left"><button type="button" class="btn btn-secondary" id="joinExisting">Join Family</button></div>
+
+                            <!-- THREE NAVIGATION BUTTONS THAT APPEAR AFTER LOGIN -->
+
+                           <div class="col-4 text-right" id="createButton"><a href="/families"> <button type="button" class="btn btn-secondary">New Family</button></a></div>
+                            <div class="col-4 text-center" id="joinButton"><button type="button" class="btn btn-secondary" id="joinExisting">Join Family</button></div>
+                            <a href="/dashboard"><div class="col-4 text-right" id="dashboardButton"><button type="button" class="btn btn-secondary" id="dashboard">Dashboard</button></div></a>
+
+                            <!-- LOGIN BUTTON -->
+                            <div class="col-12 text-center">
+                            <div class="button" id="loginButton">
+                                    <div class="submit" id="login"><h3> <i class="fa fa-sign-in" aria-hidden="true"></i> Login</h3></div>
+                                    <div class="arrow">
+                                        <div class="top line"></div>
+                                        <div class="bottom line"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
                         <br>
+
+                        <!-- FORM THAT TAKES IN JOIN CODE (APPEARS AFTER LOGIN AND CLICKING ON 'JOIN FAMILY') -->
                         <div class="row" id="join-existing">
-                            <div class="col-12">
+                            <div class="col-2"></div>
+                            <div class="col-8">
                                     <form>
                                             <div class="form-group">
                                               <label for="joinCode">Join Code</label>
-                                              <input type="text" class="form-control" id="joinCode" placeholder="xTfd8DeY78iJl893DEF">
+                                              <input type="text" class="form-control" id="joinCode" placeholder="6bae1191-8818-3b6b-866d-bbb35025482c">
                                               <small id="emailHelp" class="form-text text-muted">please enter in the join code that you were provided with</small>
                                             </div>
                                     </form>
@@ -77,22 +106,22 @@
                     <div class="row profile-images-home" style="margin-top: 3%;">
                         <div class="col-sm-6 col-md-4 col-lg-3 text-center first-image">
                                 <img src="http://images.politico.com/global//blogs/111027_tory_burch_click_ap_465.jpg" class="first-image family-image-home" alt="...">
-                                <h3 class="first-image text-names text-center">Mom</h3>
+                                <h3 class="text-names text-center">Mom</h3>
                         </div>
 
-                        <div class="col-sm-6 col-md-4 col-lg-3 text-center">
-                                <img  src="http://cdn-img.instyle.com/sites/default/files/styles/684xflex/public/images/2017/08/2017-chris-hemsworth.jpg?itok=7G8ZoEe9" class="second-image family-image-home" alt="...">
-                                <h3 class="text-names text-center second-image">Dad</h3>
+                        <div class="col-sm-6 col-md-4 col-lg-3 text-center second-image">
+                                <img  src="http://cdn-img.instyle.com/sites/default/files/styles/684xflex/public/images/2017/08/2017-chris-hemsworth.jpg?itok=7G8ZoEe9" class="family-image-home" alt="...">
+                                <h3 class="text-names text-center">Dad</h3>
                         </div>
 
-                        <div class="col-sm-6 col-md-4 col-lg-3 text-center">
-                                <img  src="https://i.pinimg.com/736x/8b/0c/1a/8b0c1a9864244f2a830cbd900963a91d--cool-kids-haircuts-cute-little-boy-haircuts.jpg" class="third-image family-image-home" alt="...">
-                                <h3 class="text-names text-center third-image">James</h3>
+                        <div class="col-sm-6 col-md-4 col-lg-3 text-center third-image">
+                                <img  src="https://i.pinimg.com/736x/8b/0c/1a/8b0c1a9864244f2a830cbd900963a91d--cool-kids-haircuts-cute-little-boy-haircuts.jpg" class="family-image-home" alt="...">
+                                <h3 class="text-names text-center">James</h3>
                         </div>
 
-                        <div class="col-sm-6 col-md-4 col-lg-3 text-center">
-                                <img src="https://s-media-cache-ak0.pinimg.com/originals/05/ab/68/05ab6838be0fb53ed2c41a4025d8ccde.jpg" class="fourth-image family-image-home" alt="...">
-                                <h3 class="text-names text-center fourth-image">Ellie</h3>
+                        <div class="col-sm-6 col-md-4 col-lg-3 text-center fourth-image">
+                                <img src="https://s-media-cache-ak0.pinimg.com/originals/05/ab/68/05ab6838be0fb53ed2c41a4025d8ccde.jpg" class="family-image-home" alt="...">
+                                <h3 class="text-names text-center">Ellie</h3>
                         </div>
 
                     </div>
@@ -105,8 +134,11 @@
                     <br>
                     <div class="row">
                         <div class="col-sm-12 col-md-7 text-center">
-                            <p style="margin-top: 5%;" class="chore-quote chore-quote-1"><i class="fa fa-quote-left" aria-hidden="true" style="color:#DD4F40"></i> Take Out The Trash Before Dad Gets Home <i class="fa fa-quote-right" aria-hidden="true" style="color:#DD4F40 "></i></p>
+                            
+                            <p style="margin-top: 0%;" class="chore-quote chore-quote-1"><i class="fa fa-quote-left" aria-hidden="true" style="color:#DD4F40"></i> Take Out The Trash Before Dad Gets Home <i class="fa fa-quote-right" aria-hidden="true" style="color:#DD4F40 "></i></p>
+                            <p class="chore-quote chore-quote-2"><i class="fa fa-quote-left" aria-hidden="true" style="color:#DD4F40"></i> Clean Your Bedroom before Saturday <i class="fa fa-quote-right" aria-hidden="true" style="color:#DD4F40 "></i></p>
                             <p class="chore-quote chore-quote-2"><i class="fa fa-quote-left" aria-hidden="true" style="color:#DD4F40"></i> Mow The Lawn <i class="fa fa-quote-right" aria-hidden="true" style="color:#DD4F40 "></i></p>
+                            <p class="chore-quote chore-quote-2"><i class="fa fa-quote-left" aria-hidden="true" style="color:#DD4F40"></i> Clean The Bathroom <i class="fa fa-quote-right" aria-hidden="true" style="color:#DD4F40 "></i></p>
                         </div>
                             <div class="col-sm-12 col-md-5">
                                 <p class='text-secondary'>Time Activated</p>
@@ -124,14 +156,27 @@
                         <br>
                         <br>
 
-                        <div class="row">
+                        <div class="row" id="background3">
           
-                            <div class="col-12 text-center"><h1>Convert Your <span style="color: #DD4F40">Points</span> to   <span style="color: #68886E; font-size: 4rem;"><i class="fa fa-money" aria-hidden="true"></i></span></h1></div>
+                            <div class="col-12 text-center points"><h1>Convert Your <span style="color: #DD4F40">Points</span> to   <span style="color: #68886E; font-size: 4rem;"><i class="fa fa-money" aria-hidden="true"></i></span></h1></div>
+                            <div class="col-12 text-center"><h3>Convert Your <span style="color: #DD4F40">Cash</span> to Toys.</h3></div>
                         </div>
+                        <br>
+                        <hr>
 
 
         
                 </div>
+                <br>
+                <br>
+
+                <div class="container">
+                <div class="row">
+                    <div class="col-6 text-center"><h1 style="margin-top: 7%;color:#DD4F40;">Master Your Schedule.</h1><hr><h4>Teach Your Kids To Do The Same</h4></div>
+                    <div class="col-6 text-center"><img  class="calendarImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt0JQHEbmcy9AOTdlYM7VJpVEhk4w-OEQiUwpkVdfsSaI77F8b" alt=""></div>
+                </div>
+            </div>
+                <br>
                 <br>
                 <br>
                 <br>

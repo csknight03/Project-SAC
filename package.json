@@ -5,12 +5,15 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "easy-guid": "^0.1.3",
     "express": "^4.16.2",
+    "guid": "0.0.12",
     "mysql2": "^1.5.1",
     "scrollme": "^0.1.1",
     "scrollreveal": "^3.3.6",
     "sequelize": "^4.31.0",
-    "sequelize-cli": "^3.2.0"
+    "sequelize-cli": "^3.2.0",
+    "uuid-lib": "0.0.6"
   },
   "devDependencies": {},
   "scripts": {
