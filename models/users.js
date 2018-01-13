@@ -24,8 +24,14 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        FamilyUuid: {
+            type: DataTypes.STRING,
+        },
 
-    });
+    }, {
+        timestamps: false
+        
+      });
 
     User.associate = function(models) {
         User.hasMany(models.Chore, {
@@ -40,6 +46,11 @@ module.exports = function(sequelize, DataTypes) {
             }
         });
     };
-
+    User.sync({force: false})
     return User;
+
 };
+
+
+
+

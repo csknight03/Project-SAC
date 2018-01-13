@@ -299,3 +299,63 @@ $("#joinExisting").on("click", function () {
 //#######################################################################//
 //#######################################################################//
 
+
+
+$("#familyUpdate").on("click",function(){
+    var GUID = $("#joinCode").val()
+    console.log("JOIN CODE IS: ", GUID)
+
+    var updatedUser = {
+        FamilyUuid: GUID
+      };
+
+      console.log(updatedUser)
+
+    $.ajax({
+      method: "PUT",
+      url: "/api/users/"+LocalStorageUID,
+      data: updatedUser
+    })
+    .done(function() {
+      window.location.href = "/dashboard";
+    });
+})
+
+// function updateUser(GUID) {
+   
+//     var updatedUser = {
+//         FamilyUuid: GUID
+//       };
+//     $.ajax({
+//       method: "PUT",
+//       url: "/api/users/"+LocalStorageUID,
+//       data: updatedUser
+//     })
+//     .done(function() {
+//       window.location.href = "/blog";
+//     });
+//   }
+
+//   $( "#join-form" ).submit(function( event ) {
+//     updateUser(GUID)
+//     alert( "Handler for .submit() called." );
+//     event.preventDefault();
+//   });
+
+//   $("#joinCode").keypress(function(event) {
+//     if (event.which == 13) {
+//         var GUID = $("#joinCode").val()
+
+//         var updatedUser = {
+//             FamilyUuid: GUID
+//           };
+//         $.ajax({
+//           method: "PUT",
+//           url: "/api/users/"+LocalStorageUID,
+//           data: updatedUser
+//         })
+//         .done(function() {
+//           window.location.href = "/";
+//         });
+//     }
+// });
