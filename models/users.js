@@ -5,12 +5,15 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
+        Fbid: {
+            type: DataTypes.STRING,
+        },
         name: {
             type: DataTypes.STRING,
             allowNull: false
         },
         picture_url: {
-            type: DataTypes.BLOB,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         points_banked: {

@@ -116,6 +116,7 @@ $("#login").on("click", function () {
     })
     /////////////////////////////////////
 
+
 })
 //#######################################################################//
 //#######################################################################//
@@ -174,6 +175,29 @@ $(document).ready(function () {
         var welcomeString = "Welcome, " + localStorage.getItem("firstName") + " " + localStorage.getItem("lastName") + "!";
         $("#header-subtext").text(welcomeString)
     }
+
+    var Fullname = localStorage.getItem("firstName") + " " + localStorage.getItem("lastName")
+
+    var newUser = {
+        name: Fullname,
+        picture_url: LocalStoragePicture,
+        points_banked: 0,
+        points_available: 0,
+        completed_tasks: 0,
+        createdAt:"2018-01-07 15:06:27",
+        updatedAt:"2018-01-07 15:06:27",
+        Fbid: LocalStorageUID,
+      };
+  
+      // Send the POST request.
+      $.ajax("/api/users", {
+        type: "POST",
+        data: newUser
+      }).then(
+        function() {
+          console.log("created new user");
+        }
+      );
 });
 
 //#######################################################################//
