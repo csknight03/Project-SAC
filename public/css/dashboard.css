@@ -130,6 +130,14 @@ label {
     border: 1px solid #CE5848;
   }
 
+  .male{
+      border: 4px solid #5B92F5;
+  }
+
+  .female{
+      border: 4px solid pink;
+  }
+
 
 
 

@@ -187,6 +187,7 @@ $(document).ready(function () {
         createdAt:"2018-01-07 15:06:27",
         updatedAt:"2018-01-07 15:06:27",
         Fbid: LocalStorageUID,
+        gender: LocalStorageGender
       };
   
       // Send the POST request.

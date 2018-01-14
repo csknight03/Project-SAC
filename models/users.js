@@ -27,6 +27,9 @@ module.exports = function(sequelize, DataTypes) {
         FamilyUuid: {
             type: DataTypes.STRING,
         },
+        gender: {
+            type: DataTypes.STRING,
+        },
 
     }, {
         timestamps: false

@@ -59,6 +59,12 @@ $.get("/api/users/"+FacebookID, function(data) {
             img.attr("src", data[i].picture_url)
             img.addClass("first-image family-image-dashboard")
 
+            if(data[i].gender === "male"){
+              img.addClass("male")
+            }else if( data[i].gender === "female"){
+              img.addClass("female")
+            }
+            
             a.append(img)
             div.append(a)
 
