@@ -301,7 +301,11 @@ $("#joinExisting").on("click", function () {
 
 
 
-$("#familyUpdate").on("click",function(){
+//#######################################################################//
+// UPDATING THE FAMILYUuID CODE FROM THE HOME PAGE
+var wage = document.getElementById("joinCode");
+wage.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
     var GUID = $("#joinCode").val()
     console.log("JOIN CODE IS: ", GUID)
 
@@ -319,43 +323,14 @@ $("#familyUpdate").on("click",function(){
     .done(function() {
       window.location.href = "/dashboard";
     });
-})
+    }
+});
 
-// function updateUser(GUID) {
-   
-//     var updatedUser = {
-//         FamilyUuid: GUID
-//       };
-//     $.ajax({
-//       method: "PUT",
-//       url: "/api/users/"+LocalStorageUID,
-//       data: updatedUser
-//     })
-//     .done(function() {
-//       window.location.href = "/blog";
-//     });
-//   }
+function validate(e) {
+    var text = e.target.value;
+    //validation of the input...
+}
 
-//   $( "#join-form" ).submit(function( event ) {
-//     updateUser(GUID)
-//     alert( "Handler for .submit() called." );
-//     event.preventDefault();
-//   });
+//#######################################################################//
+//#######################################################################//
 
-//   $("#joinCode").keypress(function(event) {
-//     if (event.which == 13) {
-//         var GUID = $("#joinCode").val()
-
-//         var updatedUser = {
-//             FamilyUuid: GUID
-//           };
-//         $.ajax({
-//           method: "PUT",
-//           url: "/api/users/"+LocalStorageUID,
-//           data: updatedUser
-//         })
-//         .done(function() {
-//           window.location.href = "/";
-//         });
-//     }
-// });

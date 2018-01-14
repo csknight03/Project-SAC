@@ -4,15 +4,92 @@
 var profilePicture = localStorage.getItem("profilePicture")
 var localStorageFirstName= localStorage.getItem("firstName")
 var localStorageLastName = localStorage.getItem("lastName")
+var FacebookID = localStorage.getItem("uid")
 //###################################################################//
 
 
-//###################################################################//
-// ADDING PROFILE PICTURE FROM LOCAL STORAGE TO THE FIRST ROUND IMAGE
 
-var myProfileName = localStorageFirstName + " " + localStorageLastName
-$("#my-profile-image").attr("src", profilePicture)
-$("#current-profile-name").text(myProfileName)
 //###################################################################//
+// FUNCTION THAT DYNAMICALLY CHANGES THE DOM CONTENTS
+
+var getNewUser = function(id){
+
+    $.get("/api/users/"+id, function(data) {
+        console.log(data)
+        var name = data.name
+        var gender = data.gender
+        var points_banked = data.points_banked
+        var points_available = data.points_available
+        var picture_url = data.picture_url
+        var Fbid = data.Fbid
+
+        $("#current-profile-name").text(name)
+        $(".userPointValue").text(points_banked)
+
+    });
+  }
+
+// starts the function by adding the logged in user info first
+getNewUser(FacebookID)
+
+//###################################################################//
+
+
+
+//###################################################################//
+//GRABBING THE USER FACEBOOK ID SO THAT I CAN FIND THE FAMILY ID
+
+$.get("/api/users/"+FacebookID, function(data) {
+    var familyID = data.FamilyUuid
+    console.log("FAMILY ID IS:",familyID)
+
+    // Nested GET request to get the list of family members
+    $.get("/api/families/"+familyID, function(data) {
+        console.log(data)
+        
+        for(i=0; i<data.length; i++){
+
+            var div = $("<div>")
+            div.addClass("col-12 text-center new-user-request")
+            div.attr("data", data[i].Fbid)
+
+            var a = $("<a>")
+
+            var img = $("<img>")
+            img.attr("src", data[i].picture_url)
+            img.addClass("first-image family-image-dashboard")
+
+            a.append(img)
+            div.append(a)
+
+            $("#familyPictures").append(div)
+
+            var option = $("<option>")
+            option.text(data[i].name)
+
+            $("#choreAssign").append(option)
+
+        }
+    
+      });
+
+  });
+
+//#############################################################//
+
+
+
+
+
+//#############################################################//
+//CLICK EVENT THAT CHANGES THE DOM WITH THE NEW USER INFO
+  $("#familyPictures").on('click', '.new-user-request', function(){
+    var newFacebookId = $(this).attr("data")
+    getNewUser(newFacebookId)
+  });
+
+  //#############################################################//
+  //#############################################################//
+
 
 

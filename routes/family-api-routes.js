@@ -8,7 +8,7 @@ module.exports = function(app) {
 
           // FIND USERS BY *FamilyUuid*
           app.get("/api/families/:id", function(req, res) {
-            db.User.findOne({
+            db.User.findAll({
               where: {
                 FamilyUuid: req.params.id
               },
