@@ -1,5 +1,5 @@
 #login-page {
-    background: url("https://i0.wp.com/familytech.com/wp-content/uploads/chores-set-kids-up-for-success_ChoreMonster_FamilyTech.jpg?fit=900%2C600") no-repeat center center fixed;
+    background: url("https://cdn-images-1.medium.com/max/2000/1*YyeGUTmbOhoIGgU0LuwDuw.jpeg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -30,7 +30,7 @@
 }
 
 .website-title-subtext {
-    color: #DD4F40;
+    color: white;
     /* font-family: 'Yellowtail', cursive; */
     font-family: 'Bungee', cursive;
     font-size: 2rem;
