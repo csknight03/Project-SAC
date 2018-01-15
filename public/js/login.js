@@ -267,19 +267,7 @@ $(window).scroll(function () {
     }
 
 
-    // if ($(this).scrollTop() < 700) {
-    //     $(".first-image").remoceClass("hidden")
-    //     $(".first-image").addClass("shown")
-    // }
-    // if ($(this).scrollTop() < 800) {
-    //     $(".second-image").fadeIn("slow")
-    // }
-    // if ($(this).scrollTop() < 900) {
-    //     $(".third-image").fadeIn("slow")
-    // }
-    // if ($(this).scrollTop() < 650) {
-    //     $(".fourth-image").fadeIn("slow")
-    // }
+
 
 });
 //#######################################################################//
