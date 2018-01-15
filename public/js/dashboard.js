@@ -23,8 +23,25 @@ var getNewUser = function(id){
         var picture_url = data.picture_url
         var Fbid = data.Fbid
 
+        var dollarAmmount = points_banked / 100;
+
         $("#current-profile-name").text(name)
         $(".userPointValue").text(points_banked)
+        $(".userDollarValue").text(dollarAmmount)
+
+         //Function that counts UP all the points
+        $('.count').each(function () {
+          $(this).prop('Counter',0).animate({
+              Counter: $(this).text()
+          }, {
+              duration: 4000,
+              easing: 'swing',
+              step: function (now) {
+                  $(this).text(Math.ceil(now));
+              }
+          });
+      });
+      ////////////////////////////////////////
 
     });
   }
@@ -96,6 +113,25 @@ $.get("/api/users/"+FacebookID, function(data) {
 
   //#############################################################//
   //#############################################################//
+
+
+
+
+  //############################################################//
+  //COUNTER UP STUFFS
+
+//   $('.count').each(function () {
+//     $(this).prop('Counter',0).animate({
+//         Counter: $(this).text()
+//     }, {
+//         duration: 4000,
+//         easing: 'swing',
+//         step: function (now) {
+//             $(this).text(Math.ceil(now));
+//         }
+//     });
+// });
+   //############################################################//
 
 
 
