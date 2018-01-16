@@ -14,7 +14,7 @@ var FacebookID = localStorage.getItem("uid")
 
 var getNewUser = function(id){
 
-  $("#individualChores").empty()
+  // $("#individualChores").empty()
 
     $.get("/api/users/"+id, function(data) {
         console.log(data)
@@ -65,19 +65,20 @@ var getNewUser = function(id){
           input.attr("id","cb"+data.Chores[j].id)
           input.attr("type", "checkbox")
   
-          var label = $("<lable>")
+          var label = $("<label>")
           label.attr("for", "cb"+data.Chores[j].id)
           label.text(data.Chores[j].chore)
           
           li.append(input)
           li.append(label)
+          // createSVGEl(li) TRYING TO FIGURE OUT HOW TO MAKE THE SBG ANIMATION WORK ON OUR DYNAMICALLY CREATED CHORES. THIS DIDN'T WORK BUT I SWEAR I'M CLOSE
   
           $("#individualChores").append(li)
 
 
 
 
-       // $("<style>").text('.ac-custom input[type="checkbox"], .ac-custom input[type="radio"], .ac-custom label::before {background-color: #CE5848;} .ac-custom li {margin: 0 auto; padding: .2em 0; position: relative;}.ac-custom input[type="checkbox"]:checked + label, .ac-custom input[type="radio"]:checked + label {color: #CE5848;}label {display: inline-block;}.ac-custom label {display: inline-block;position: relative;font-size: 1.5em;padding-left: 80px;cursor: pointer;-webkit-transition: color 0.3s; transition: color 0.3s;}').appendTo("head");
+      //  $("<style>").text('.ac-custom input[type="checkbox"], .ac-custom input[type="radio"], .ac-custom label::before {background-color: #CE5848;} .ac-custom li {margin: 0 auto; padding: .2em 0; position: relative;}.ac-custom input[type="checkbox"]:checked + label, .ac-custom input[type="radio"]:checked + label {color: #CE5848;}label {display: inline-block;}.ac-custom label {display: inline-block;position: relative;font-size: 1.5em;padding-left: 80px;cursor: pointer;-webkit-transition: color 0.3s; transition: color 0.3s;}').appendTo("head");
 
 
 
@@ -217,4 +218,26 @@ var points = $("#chorePoints").val()
 })
 
 //############################################################//
+// BADGES
+var displayBadges = function(id) {
+  $.get("/api/users/"+id, function(data) {
+    console.log(data)
+    var choresCompleted = data.completed_tasks;
+    console.log(choresCompleted);
+    if (choresCompleted == 5) {
+      $("#5").removeClass("d-none");
+      console.log("I've completed 5 tasks, the badge should be showing!");
+    }
+});
+}
+
+displayBadges(FacebookID);
 //############################################################//
+// CHECKING CHECKBOXES INCREMENTS NUMBER OF COMPLETED TASKS
+var completeTask = function(id) {
+  $.get("/api/users/"+id, function(data) {
+    console.log(data)
+    var choresCompleted = data.completed_tasks;
+    
+});
+}
