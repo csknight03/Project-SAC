@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-    
+
 
 
     <div class="row profile-name-fix">
@@ -81,8 +81,8 @@
                         <div id="choresList">
 
 
-                            <form class="ac-custom ac-checkbox ac-cross">
-                                <ul>
+                            <form class="ac-custom ac-checkbox ac-cross" id="choresFrom">
+                                <ul id="individualChores">
 
                                     <!-- ADD NEW CHORES HERE -->
 
@@ -139,8 +139,8 @@
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Create New Chore</h5>
+                                            <div class="modal-header text-center">
+                                                <h5 class="modal-title text-center" id="exampleModalLabel">Create New Chore For <span class="modal-name"></span></h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -150,17 +150,6 @@
                                                 <!-- MODAL FORM CONTENT TO ADD A NEW CHORE-->
 
                                                 <form>
-
-                                                    <div class="form-group">
-                                                        <label for="choreAssign" class="form-label">Assign To:</label>
-                                                        <select class="form-control" id="choreAssign">
-
-                                                            <!-- ADD LIST OF FAMILY MEMBERS HERE -->
-
-
-                                                        </select>
-                                                    </div>
-
 
                                                     <div class="form-group">
                                                         <label for="chorePriority">Chore Priority</label>
@@ -178,7 +167,7 @@
 
 
                                                     <div class="form-group">
-                                                        <label for="choreMessage" class="form-label">Describe your Chore:</label>
+                                                        <label for="choreMessage" class="">Describe your Chore:</label>
                                                         <textarea class="form-control" id="choreMessage" rows="3"></textarea>
                                                     </div>
                                                 </form>
@@ -192,7 +181,7 @@
                                             <!-- CHORSE SUBMIT BUTTON -->
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                <button type="button" class="btn btn-primary" data="" id="chores-submit">Save changes</button>
                                             </div>
 
 

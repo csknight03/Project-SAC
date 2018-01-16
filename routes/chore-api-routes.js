@@ -28,12 +28,7 @@ module.exports = function(app) {
       },
       include: [
         {
-          model: db.User,
-          include: [
-            {
-              model: db.Family
-            }
-          ]
+          model: db.User
         }
       ]
     }).then(function(dbChore) {
@@ -52,7 +47,7 @@ module.exports = function(app) {
   app.delete("/api/chores/:id", function(req, res) {
     db.Chore.destroy({
       where: {
-        id: req.params.id
+        UserFbid: req.params.id
       }
     }).then(function(dbChore) {
       res.json(dbChore);

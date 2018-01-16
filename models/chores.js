@@ -10,11 +10,9 @@ module.exports = function(sequelize, DataTypes) {
         },
         date_completed: {
             type: DataTypes.DATE,
-            allowNull: false,
         },
         due_date: {
             type: DataTypes.DATE,
-            allowNull: false,
         },
         status: {
             type: DataTypes.TEXT,
@@ -26,7 +24,6 @@ module.exports = function(sequelize, DataTypes) {
         },
         category: {
             type: DataTypes.STRING,
-            allowNull: false,
         }
 
     });

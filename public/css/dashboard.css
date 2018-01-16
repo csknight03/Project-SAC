@@ -86,6 +86,10 @@ label {
     background-color: #CE5848;
 }
 
+.error{
+    border: 2px solid red;
+}
+
 
 .profile-name-fix{
     color: #CE5848;
@@ -139,6 +143,10 @@ label {
       border: 4px solid pink;
   }
 
+  .modal-name{
+    color: #CE5848;
+    font-family: 'Bungee', cursive;
+  }
 
 
 
