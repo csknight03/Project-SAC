@@ -20,7 +20,7 @@ module.exports = function(app) {
   app.get("/api/users/:id", function(req, res) {
     db.User.findOne({
       where: {
-        id: req.params.id
+        Fbid: req.params.id
       },
       include: [
         {
@@ -32,6 +32,7 @@ module.exports = function(app) {
       res.json(dbUser);
     });
   });
+
 
     // CREATE A NEW USER
   app.post("/api/users", function(req, res) {
@@ -46,6 +47,26 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       }
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+
+  // UPDATE A USER BY THEIR ID  ** NOT WORKING RIGHT **
+
+  app.put("/api/users/:id", function(req, res) {
+    db.User.update(
+      req.body,
+      {
+      where: {
+        Fbid: req.params.id
+      },
+      include: [
+        {
+          model: db.Family,
+          // model: db.Chore
+        }
+      ]
     }).then(function(dbUser) {
       res.json(dbUser);
     });

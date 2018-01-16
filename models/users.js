@@ -1,16 +1,15 @@
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
-        id: {
-            type: DataTypes.INTEGER,
+        Fbid: {
+            type: DataTypes.STRING,
             primaryKey: true,
-            autoIncrement: true
         },
         name: {
             type: DataTypes.STRING,
             allowNull: false
         },
         picture_url: {
-            type: DataTypes.BLOB,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         points_banked: {
@@ -25,8 +24,17 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        FamilyUuid: {
+            type: DataTypes.STRING,
+        },
+        gender: {
+            type: DataTypes.STRING,
+        },
 
-    });
+    }, {
+        timestamps: false
+        
+      });
 
     User.associate = function(models) {
         User.hasMany(models.Chore, {
@@ -41,6 +49,11 @@ module.exports = function(sequelize, DataTypes) {
             }
         });
     };
-
+    User.sync({force: false})
     return User;
+
 };
+
+
+
+

@@ -116,6 +116,7 @@ $("#login").on("click", function () {
     })
     /////////////////////////////////////
 
+
 })
 //#######################################################################//
 //#######################################################################//
@@ -174,6 +175,30 @@ $(document).ready(function () {
         var welcomeString = "Welcome, " + localStorage.getItem("firstName") + " " + localStorage.getItem("lastName") + "!";
         $("#header-subtext").text(welcomeString)
     }
+
+    var Fullname = localStorage.getItem("firstName") + " " + localStorage.getItem("lastName")
+
+    var newUser = {
+        name: Fullname,
+        picture_url: LocalStoragePicture,
+        points_banked: 0,
+        points_available: 0,
+        completed_tasks: 0,
+        createdAt:"2018-01-07 15:06:27",
+        updatedAt:"2018-01-07 15:06:27",
+        Fbid: LocalStorageUID,
+        gender: LocalStorageGender
+      };
+  
+      // Send the POST request.
+      $.ajax("/api/users", {
+        type: "POST",
+        data: newUser
+      }).then(
+        function() {
+          console.log("created new user");
+        }
+      );
 });
 
 //#######################################################################//
@@ -186,46 +211,63 @@ $(document).ready(function () {
 // SCROLL STUFF THAT HIDES THE PICTURES DEPENDING ON HOW MANY PIXELS YOU'VE SCROLLED DOWN
 
 $(window).scroll(function () {
-    // the < 500 here means 'less than 500px'
-    if ($(this).scrollTop() < 500) {
-        console.log("Less than 500")
-    }
-    if ($(this).scrollTop() > 700) {
+    // the < 850 here means 'less than 500px'
+
+
+    if ($(this).scrollTop() > 400) {
         $(".first-image").animate({
-            'opacity': '0'
-        }, 1000);
+            'opacity': '1'
+        }, 1100);
     }
-    if ($(this).scrollTop() > 800) {
+    if ($(this).scrollTop() >400) {
         $(".second-image").animate({
-            'opacity': '0'
-        }, 1000);
+            'opacity': '1'
+        }, 1400);
     }
-    if ($(this).scrollTop() > 900) {
+    if ($(this).scrollTop() > 400) {
         $(".third-image").animate({
-            'opacity': '0'
-        }, 1000);
+            'opacity': '1'
+        }, 1400);
     }
 
-    if ($(this).scrollTop() > 900) {
+    if ($(this).scrollTop() > 400) {
         $(".fourth-image").animate({
-            'opacity': '0'
-        }, 1000);
+            'opacity': '1'
+        }, 1100);
+    }
+
+    if ($(this).scrollTop() > 700) {
+        $(".chore-quote-1").animate({
+            'opacity': '1'
+        }, 1100);
+    }
+
+    if ($(this).scrollTop() > 770) {
+        $(".chore-quote-2").animate({
+            'opacity': '1'
+        }, 1100);
+    }
+
+    if ($(this).scrollTop() > 870) {
+        $(".chore-quote-3").animate({
+            'opacity': '1'
+        }, 1100);
+    }
+
+    if ($(this).scrollTop() > 970) {
+        $(".chore-quote-4").animate({
+            'opacity': '1'
+        }, 1100);
+    }
+
+    if ($(this).scrollTop() > 1270) {
+        $(".points-text").animate({
+            'opacity': '1'
+        }, 1100);
     }
 
 
 
-    if ($(this).scrollTop() < 700) {
-        $(".image-first").fadeIn("slow")
-    }
-    if ($(this).scrollTop() < 800) {
-        $(".second-image").fadeIn("slow")
-    }
-    if ($(this).scrollTop() < 900) {
-        $(".third-image").fadeIn("slow")
-    }
-    if ($(this).scrollTop() < 650) {
-        $(".fourth-image").fadeIn("slow")
-    }
 
 });
 //#######################################################################//
@@ -242,6 +284,41 @@ $("#join-existing").hide()
 $("#joinExisting").on("click", function () {
     $("#join-existing").toggle(1000)
 })
+
+//#######################################################################//
+//#######################################################################//
+
+
+
+//#######################################################################//
+// UPDATING THE FAMILYUuID CODE FROM THE HOME PAGE
+var wage = document.getElementById("joinCode");
+wage.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+    var GUID = $("#joinCode").val()
+    console.log("JOIN CODE IS: ", GUID)
+
+    var updatedUser = {
+        FamilyUuid: GUID
+      };
+
+      console.log(updatedUser)
+
+    $.ajax({
+      method: "PUT",
+      url: "/api/users/"+LocalStorageUID,
+      data: updatedUser
+    })
+    .done(function() {
+      window.location.href = "/dashboard";
+    });
+    }
+});
+
+function validate(e) {
+    var text = e.target.value;
+    //validation of the input...
+}
 
 //#######################################################################//
 //#######################################################################//
