@@ -60,6 +60,15 @@ var getNewUser = function(id){
     
           var li = $("<li>")
           li.attr("data",data.Chores[j].id)
+
+
+          // we will use this "data-id" to match to the Fbid so that users can only check off their own tasks
+          // if users Fbid that is in local storage === this.data("id").val() -- then allow the API call to update the chore status.  
+          // If not, hide the checkbox or something along those lines.
+
+          li.attr("data-id",data.Fbid)
+
+
           var input = $("<input>")
           input.attr("name", "cb"+data.Chores[j].id)
           input.attr("id","cb"+data.Chores[j].id)
