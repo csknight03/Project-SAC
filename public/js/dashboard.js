@@ -14,7 +14,7 @@ var FacebookID = localStorage.getItem("uid")
 
 var getNewUser = function(id){
 
-  // $("#individualChores").empty()
+  $("#individualChores").empty()
 
     $.get("/api/users/"+id, function(data) {
         console.log(data)
@@ -75,19 +75,7 @@ var getNewUser = function(id){
   
           $("#individualChores").append(li)
 
-
-
-
-      //  $("<style>").text('.ac-custom input[type="checkbox"], .ac-custom input[type="radio"], .ac-custom label::before {background-color: #CE5848;} .ac-custom li {margin: 0 auto; padding: .2em 0; position: relative;}.ac-custom input[type="checkbox"]:checked + label, .ac-custom input[type="radio"]:checked + label {color: #CE5848;}label {display: inline-block;}.ac-custom label {display: inline-block;position: relative;font-size: 1.5em;padding-left: 80px;cursor: pointer;-webkit-transition: color 0.3s; transition: color 0.3s;}').appendTo("head");
-
-
-
-
       }
-
-      // <li><input name="cb1" id="cb1" type="checkbox"><lable for="cb1">test post</lable></li>
-
-      // <li><input id="cb1" name="cb1" type="checkbox"><label for="cb1">Efficiently unleash information</label></li>
 
     });
   }
