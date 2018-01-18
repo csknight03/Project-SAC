@@ -214,3 +214,7 @@ $(".newPointsSubmit").on("click", function () {
     });
 
 })
+
+
+
+
