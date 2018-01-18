@@ -116,6 +116,7 @@ $("#login").on("click", function () {
     })
     /////////////////////////////////////
 
+
 })
 //#######################################################################//
 //#######################################################################//
@@ -174,6 +175,30 @@ $(document).ready(function () {
         var welcomeString = "Welcome, " + localStorage.getItem("firstName") + " " + localStorage.getItem("lastName") + "!";
         $("#header-subtext").text(welcomeString)
     }
+
+    var Fullname = localStorage.getItem("firstName") + " " + localStorage.getItem("lastName")
+
+    var newUser = {
+        name: Fullname,
+        picture_url: LocalStoragePicture,
+        points_banked: 0,
+        points_available: 0,
+        completed_tasks: 0,
+        createdAt:"2018-01-07 15:06:27",
+        updatedAt:"2018-01-07 15:06:27",
+        Fbid: LocalStorageUID,
+        gender: LocalStorageGender
+      };
+  
+      // Send the POST request.
+      $.ajax("/api/users", {
+        type: "POST",
+        data: newUser
+      }).then(
+        function() {
+          console.log("created new user");
+        }
+      );
 });
 
 //#######################################################################//
@@ -242,19 +267,7 @@ $(window).scroll(function () {
     }
 
 
-    // if ($(this).scrollTop() < 700) {
-    //     $(".first-image").remoceClass("hidden")
-    //     $(".first-image").addClass("shown")
-    // }
-    // if ($(this).scrollTop() < 800) {
-    //     $(".second-image").fadeIn("slow")
-    // }
-    // if ($(this).scrollTop() < 900) {
-    //     $(".third-image").fadeIn("slow")
-    // }
-    // if ($(this).scrollTop() < 650) {
-    //     $(".fourth-image").fadeIn("slow")
-    // }
+
 
 });
 //#######################################################################//
@@ -271,6 +284,41 @@ $("#join-existing").hide()
 $("#joinExisting").on("click", function () {
     $("#join-existing").toggle(1000)
 })
+
+//#######################################################################//
+//#######################################################################//
+
+
+
+//#######################################################################//
+// UPDATING THE FAMILYUuID CODE FROM THE HOME PAGE
+var wage = document.getElementById("joinCode");
+wage.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+    var GUID = $("#joinCode").val()
+    console.log("JOIN CODE IS: ", GUID)
+
+    var updatedUser = {
+        FamilyUuid: GUID
+      };
+
+      console.log(updatedUser)
+
+    $.ajax({
+      method: "PUT",
+      url: "/api/users/"+LocalStorageUID,
+      data: updatedUser
+    })
+    .done(function() {
+      window.location.href = "/dashboard";
+    });
+    }
+});
+
+function validate(e) {
+    var text = e.target.value;
+    //validation of the input...
+}
 
 //#######################################################################//
 //#######################################################################//

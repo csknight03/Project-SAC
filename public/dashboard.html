@@ -38,6 +38,7 @@
     </div>
 
 
+
     <div class="row profile-name-fix">
         <div class="col-12 text-center">
             <h1 id="current-profile-name"></h1>
@@ -54,33 +55,7 @@
 
         <div class="col-sm-4 col-md-2 text-center" id="familyPictures" style="border-right: 1px solid grey;">
 
-            <div class="col-12 text-center">
-                <a>
-                    <img id="my-profile-image" src="http://images.politico.com/global//blogs/111027_tory_burch_click_ap_465.jpg" class="first-image family-image-dashboard"
-                        alt="...">
-                </a>
-            </div>
 
-            <br>
-
-            <div class="col-12">
-                <img src="http://cdn-img.instyle.com/sites/default/files/styles/684xflex/public/images/2017/08/2017-chris-hemsworth.jpg?itok=7G8ZoEe9"
-                    class="first-image family-image-dashboard" alt="...">
-            </div>
-
-            <br>
-
-            <div class="col-12">
-                <img src="https://i.pinimg.com/736x/8b/0c/1a/8b0c1a9864244f2a830cbd900963a91d--cool-kids-haircuts-cute-little-boy-haircuts.jpg"
-                    class="first-image family-image-dashboard" alt="...">
-            </div>
-
-            <br>
-
-            <div class="col-12">
-                <img src="https://s-media-cache-ak0.pinimg.com/originals/05/ab/68/05ab6838be0fb53ed2c41a4025d8ccde.jpg" class="first-image family-image-dashboard"
-                    alt="...">
-            </div>
 
 
         </div>
@@ -106,29 +81,29 @@
                         <div id="choresList">
 
 
-                            <form class="ac-custom ac-checkbox ac-cross">
-                                <ul>
+                            <form class="ac-custom ac-checkbox ac-checkmark" id="choresForm">
+                                <ul id="individualChores">
 
                                     <!-- ADD NEW CHORES HERE -->
 
                                     <li>
-                                        <input id="cb1" name="cb1" type="checkbox">
+                                        <input id="cb1" name="cb1" type="checkbox" class="cb">
                                         <label for="cb1">Efficiently unleash information</label>
                                     </li>
                                     <li>
-                                        <input id="cb2" name="cb2" type="checkbox">
+                                        <input id="cb2" name="cb2" type="checkbox" class="cb">
                                         <label for="cb2">Quickly maximize timely deliverables</label>
                                     </li>
                                     <li>
-                                        <input id="cb3" name="cb3" type="checkbox">
+                                        <input id="cb3" name="cb3" type="checkbox" class="cb">
                                         <label for="cb3">Dramatically maintain solutions</label>
                                     </li>
                                     <li>
-                                        <input id="cb4" name="cb4" type="checkbox">
+                                        <input id="cb4" name="cb4" type="checkbox" class="cb">
                                         <label for="cb4">Completely synergize relationships</label>
                                     </li>
                                     <li>
-                                        <input id="cb5" name="cb5" type="checkbox">
+                                        <input id="cb5" name="cb5" type="checkbox" class="cb">
                                         <label for="cb5">Professionally cultivate customer service</label>
                                     </li>
                                 </ul>
@@ -150,7 +125,7 @@
                     <div class="col-4">
                         <div class="row">
 
-                            <div class="col-12 text-center">
+                            <div class="col-6 text-center">
 
 
                                 <!-- **************   NEW CHORE MODAL  ************** -->
@@ -164,8 +139,8 @@
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Create New Chore</h5>
+                                            <div class="modal-header text-center">
+                                                <h5 class="modal-title text-center" id="exampleModalLabel">Create New Chore For <span class="modal-name"></span></h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -177,32 +152,22 @@
                                                 <form>
 
                                                     <div class="form-group">
-                                                        <label for="choreAssign" class="form-label">Assign To:</label>
-                                                        <select class="form-control" id="choreAssign">
-
-                                                            <!-- ADD LIST OF FAMILY MEMBERS HERE -->
-                                                            <option>Dad</option>
-                                                            <option>Mom</option>
-                                                            <option>Kid 1</option>
-                                                            <option>Kid 2</option>
-                                                            <option>Kid 3</option>
-
+                                                        <label for="chorePriority">Chore Priority</label>
+                                                        <select class="form-control" id="chorePriority">
+                                                          <option>Important</option>
+                                                          <option>Kind Of Important</option>
+                                                          <option>Not Important</option>
                                                         </select>
-                                                    </div>
+                                                      </div>
+
+                                                    <div class="form-group">
+                                                        <label for="chorePoints">Chore Point Value:</label>
+                                                        <input type="integer" class="form-control" id="chorePoints" placeholder="400">
+                                                      </div>
 
 
                                                     <div class="form-group">
-                                                        <label for="priority" class="form-label">Priority</label>
-                                                        <select multiple class="form-control" id="priority">
-                                                            <option>Important</option>
-                                                            <option>Kind of Important</option>
-                                                            <option>Not Important</option>
-                                                        </select>
-                                                    </div>
-
-
-                                                    <div class="form-group">
-                                                        <label for="choreMessage" class="form-label">Describe your Chore:</label>
+                                                        <label for="choreMessage" class="">Describe your Chore:</label>
                                                         <textarea class="form-control" id="choreMessage" rows="3"></textarea>
                                                     </div>
                                                 </form>
@@ -216,7 +181,7 @@
                                             <!-- CHORSE SUBMIT BUTTON -->
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                <button type="button" class="btn btn-primary" data="" id="chores-submit">Save changes</button>
                                             </div>
 
 
@@ -232,6 +197,17 @@
 
                             </div>
 
+                            <div class="col-6 text-center">
+
+
+                                <!-- **************   NEW CHORE MODAL  ************** -->
+
+
+                                <a href="/admin"><button type="button" class="btn btn-secondary" >
+                                    <i class="fa fa-user" aria-hidden="true" style="color: white;"></i>  Admin View
+                                </button></a>
+                                </div>
+
                             <!-- POINTS SECTION IN THE TOP RIGHT -->
 
                             <div class="col-6 text-center">
@@ -243,7 +219,7 @@
                                     </div>
                                     <div class="card-body">
                                         <!-- DYNAMICALLY ADD POINTS FROM DATABASE HERE -->
-                                        <p class="userPointValue">2790</p>
+                                        <p class="userPointValue count">0</p>
                                     </div>
                                 </div>
                             </div>
@@ -256,7 +232,7 @@
                                     </div>
                                     <div class="card-body">
                                         <!-- CONVERT POINTS TO DOLLAR VALUE HERE -->
-                                        <p class="userDollarValue">$18.90</p>
+                                        <p style="color: green; font-size: 1rem; font-size: 1.5rem; margin-top: -12px;">$<span class="userDollarValue count">0</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -273,6 +249,9 @@
                             </div>
 
                             <div class="col-12 text-center">
+                                <img id="5" src="./images/5.png" class="d-none" alt="You've completed 5 tasks!">
+                            </div>
+                            <!-- <div class="col-12 text-center">
                                 <span class="badge badge-success">Success</span>
                             </div>
                             <div class="col-12 text-center">
@@ -280,10 +259,7 @@
                             </div>
                             <div class="col-12 text-center">
                                 <span class="badge badge-success">Success</span>
-                            </div>
-                            <div class="col-12 text-center">
-                                <span class="badge badge-success">Success</span>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>
@@ -327,14 +303,11 @@
 
 
 
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
-        crossorigin="anonymous"></script>
+        
     <script src="./AnimatedCheckboxes/js/svgcheckbx.js"></script>
     <script src="./AnimatedCheckboxes/js/modernizr.custom.js"></script>
     <script src="./js/index.js"></script>
