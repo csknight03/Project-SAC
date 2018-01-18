@@ -2,114 +2,120 @@
 // GRABBING ITEMS FROM LOCAL STORAGE AND SETTING THEM AS VARIABLES
 
 var profilePicture = localStorage.getItem("profilePicture")
-var localStorageFirstName= localStorage.getItem("firstName")
+var localStorageFirstName = localStorage.getItem("firstName")
 var localStorageLastName = localStorage.getItem("lastName")
 var FacebookID = localStorage.getItem("uid")
 //###################################################################//
 
 
-
 //###################################################################//
-// FUNCTION THAT DYNAMICALLY CHANGES THE DOM CONTENTS
+//CODE TO ADD THE CARD LIST OF FAMILY MEMBERS
 
-var getNewUser = function(id){
+$.get("/api/users/" + FacebookID, function (data) {
+  var familyID = data.FamilyUuid
+  console.log("FAMILY ID IS:", familyID)
 
-    $.get("/api/users/"+id, function(data) {
-        console.log(data)
-        var name = data.name
-        var gender = data.gender
-        var points_banked = data.points_banked
-        var points_available = data.points_available
-        var picture_url = data.picture_url
-        var Fbid = data.Fbid
+  // Nested GET request to get the list of family members
+  $.get("/api/families/" + familyID, function (data) {
+    console.log(data)
 
-        var dollarAmmount = points_banked / 100;
+    for (i = 0; i < data.length; i++) {
 
-        $("#current-profile-name").text(name)
-        $(".userPointValue").text(points_banked)
-        $(".userDollarValue").text(dollarAmmount)
+      var div = $("<div>")
+      div.addClass("col-md-6")
+      var card = $("<div>")
+      card.addClass("card")
+      var cardBody = $("<div>")
+      cardBody.addClass("card-body text-center")
+      var img = $("<img>")
+      img.attr("src", data[i].picture_url)
+      img.addClass("first-image family-image-dashboard text-center")
 
-         //Function that counts UP all the points
-        $('.count').each(function () {
-          $(this).prop('Counter',0).animate({
-              Counter: $(this).text()
-          }, {
-              duration: 4000,
-              easing: 'swing',
-              step: function (now) {
-                  $(this).text(Math.ceil(now));
-              }
-          });
-      });
-      ////////////////////////////////////////
 
+      cardBody.append(img)
+      var cardBodyText = $("<h3>" + data[i].name + "</h3>)")
+      cardBodyText.addClass("text-center name-title")
+
+      cardBody.append(cardBodyText)
+
+      var userRole = $("<p class='text-center text-secondary'>" + data[i].role + "</p>")
+      cardBody.append(userRole)
+
+
+      var row = $("<div>")
+      row.addClass("row")
+
+      var col1 = $("<div>")
+      col1.addClass("col-sm-5")
+
+      var col2 = $("<div>")
+      col2.addClass("col-sm-5")
+
+      var button1 = $('<button type="button" class="btn btn-success">Cash Out</button>')
+      var button2 = $('<button type="button" class="btn btn-secondary change-role" data-toggle="modal" data-target="#exampleModal" data-id=' + data[i].Fbid + '>User Role</button>')
+
+
+
+      button2.attr("data", data[i].Fbid)
+
+      col1.append(button1)
+      col2.append(button2)
+
+      row.append(col1)
+      row.append(col2)
+
+      cardBody.append(row)
+      div.append(card)
+      card.append(cardBody)
+
+
+      $("#admin-users").append(div)
+
+    }
+
+  });
+
+});
+
+//#############################################################//
+var newID;
+
+//#############################################################//
+// Adding Correct Content to MODAL
+
+$("#admin-users").on('click', '.change-role', function () {
+  var dataId = $(this).data("id")
+  console.log(dataId)
+  console.log(this)
+  newID = dataId
+  updateSaveButton()
+});
+
+
+$(".newRoleSubmit").on("click", function () {
+
+  var Fbid = $(this).attr("data")
+  console.log(Fbid)
+  var NewRole = $("#newUserRole").val()
+
+  var updatedUser = {
+    role: NewRole
+  };
+
+
+  $.ajax({
+      method: "PUT",
+      url: "/api/users/" + Fbid,
+      data: updatedUser
+    })
+    .done(function () {
+      window.location.href = "/admin";
     });
-  }
 
-// starts the function by adding the logged in user info first
-getNewUser(FacebookID)
-
-//###################################################################//
+})
 
 
+var updateSaveButton = function () {
 
-//###################################################################//
-//GRABBING THE USER FACEBOOK ID SO THAT I CAN FIND THE FAMILY ID
-
-$.get("/api/users/"+FacebookID, function(data) {
-    var familyID = data.FamilyUuid
-    console.log("FAMILY ID IS:",familyID)
-
-    // Nested GET request to get the list of family members
-    $.get("/api/families/"+familyID, function(data) {
-        console.log(data)
-        
-        for(i=0; i<data.length; i++){
-
-            var div = $("<div>")
-            div.addClass("col-12 text-center new-user-request")
-            div.attr("data", data[i].Fbid)
-
-            var a = $("<a>")
-
-            var img = $("<img>")
-            img.attr("src", data[i].picture_url)
-            img.addClass("first-image family-image-dashboard")
-
-            if(data[i].gender === "male"){
-              img.addClass("male")
-            }else if( data[i].gender === "female"){
-              img.addClass("female")
-            }
-            
-            a.append(img)
-            div.append(a)
-
-            $("#familyPictures").append(div)
-
-            var option = $("<option>")
-            option.text(data[i].name)
-
-            $("#choreAssign").append(option)
-
-        }
-    
-      });
-
-  });
-
-//#############################################################//
-
-
-
-
-
-//#############################################################//
-//CLICK EVENT THAT CHANGES THE DOM WITH THE NEW USER INFO
-  $("#familyPictures").on('click', '.new-user-request', function(){
-    var newFacebookId = $(this).attr("data")
-    getNewUser(newFacebookId)
-  });
-
-  //#############################################################//
-  //#############################################################//
+  $(".newRoleSubmit").attr("data", newID)
+}

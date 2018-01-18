@@ -23,13 +23,110 @@
 <body>
 
 
-    
+    <!-- HEADER SECTION  -->
 
-   
+    <div id="header">
+        <div class="row">
+            <div class="col-12 text-left">
+                <a href="/">
+                    <i class="fa fa-home" aria-hidden="true" id="home-button"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row" style="margin-top: -5%;">
+            <div class="col-12">
+                <h1 class="animation text-center main-title">My Family</h1>
+            </div>
+        </div>
+    </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <!-- END OF HEADER SECTION -->
+
+
+    <div class="container">
+        <br>
+        <br>
+        <div class="row">
+            
+
+            <!-- OPEN OF USERS COLUMN -->
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3 class="title text-center">Family Members</h3>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row" id="admin-users">
+
+
+                </div>
+
+            </div>
+
+
+            <!-- OPEN OF CHORES COLUMN -->
+            <div class="col-6">
+                    <div class="row">
+                            <div class="col-12 text-center">
+                                <h3 class="title text-center">Finished Chores</h3>
+                                <hr>
+                            </div>
+                        </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<!-- MODAL SECTION -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="test-content">
+              <h3>Update User Role</h3>
+
+              <form>
+                    <div class="form-group">
+                      <select class="form-control" id="newUserRole">
+                        <option>Admin</option>
+                        <option>Child</option>
+                      </select>
+                    </div>
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary newRoleSubmit">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="./AnimatedCheckboxes/js/svgcheckbx.js"></script>
     <script src="./AnimatedCheckboxes/js/modernizr.custom.js"></script>
