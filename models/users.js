@@ -30,6 +30,10 @@ module.exports = function(sequelize, DataTypes) {
         gender: {
             type: DataTypes.STRING,
         },
+        role: {
+            type: DataTypes.STRING,
+            defaultValue: "Admin"
+        },
 
     }, {
         timestamps: false
