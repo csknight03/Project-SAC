@@ -5,19 +5,34 @@ var profilePicture = localStorage.getItem("profilePicture")
 var localStorageFirstName = localStorage.getItem("firstName")
 var localStorageLastName = localStorage.getItem("lastName")
 var FacebookID = localStorage.getItem("uid")
+var userRole = localStorage.getItem("role")
 //###################################################################//
+
+$("#errorMessage").hide();
 
 
 //###################################################################//
 //CODE TO ADD THE CARD LIST OF FAMILY MEMBERS
 
+if(userRole=== "Child"){
+  console.log("UNAUTHORIZED")
+  $("#errorMessage").show();
+  $("#main-content").hide()
+}else{
+
 $.get("/api/users/" + FacebookID, function (data) {
   var familyID = data.FamilyUuid
+  userRole = data.role
   console.log("FAMILY ID IS:", familyID)
+  console.log(userRole)
 
   // Nested GET request to get the list of family members
   $.get("/api/families/" + familyID, function (data) {
     console.log(data)
+
+    if (userRole === "Child"){
+      console.log("UNAUTHORIZED")
+    }else{
 
     for (i = 0; i < data.length; i++) {
 
@@ -72,10 +87,12 @@ $.get("/api/users/" + FacebookID, function (data) {
       $("#admin-users").append(div)
 
     }
+  }
 
   });
 
 });
+}
 
 //#############################################################//
 var newID;
@@ -109,6 +126,7 @@ $(".newRoleSubmit").on("click", function () {
       data: updatedUser
     })
     .done(function () {
+      
       window.location.href = "/admin";
     });
 
