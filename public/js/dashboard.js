@@ -216,25 +216,55 @@ var points = $("#chorePoints").val()
 
 //############################################################//
 // BADGES
-var displayBadges = function(id) {
-  $.get("/api/users/"+id, function(data) {
+// var displayBadges = function() {
+//   console.log("This is the start of the displayBadges function");
+//   var Fbid = $(this).data("id");
+//   $.get("/api/users/"+Fbid, function(data) {
+//     console.log(data)
+//     var choresCompleted = data.completed_tasks;
+//     console.log(choresCompleted);
+//     if (choresCompleted == 5) {
+//       $("#5").removeClass("d-none");
+//       console.log("I've completed 5 tasks, the badge should be showing!");
+//     }
+//   });
+// }
+
+// displayBadges();
+
+$("#familyPictures").on("click", ".new-user-request", function(){
+  console.log("This is the start of the displayBadges function");
+  var Fbid = $(this).attr("data");
+  console.log(Fbid);
+  $.get("/api/users/"+Fbid, function(data) {
     console.log(data)
     var choresCompleted = data.completed_tasks;
     console.log(choresCompleted);
     if (choresCompleted == 5) {
       $("#5").removeClass("d-none");
       console.log("I've completed 5 tasks, the badge should be showing!");
+    } else {
+      $("#5").addClass("d-none");
     }
+  });
 });
-}
-
-displayBadges(FacebookID);
 //############################################################//
 // CHECKING CHECKBOXES INCREMENTS NUMBER OF COMPLETED TASKS
-var completeTask = function(id) {
-  $.get("/api/users/"+id, function(data) {
-    console.log(data)
-    var choresCompleted = data.completed_tasks;
-    
+$(".cb").on("click", function(){
+  var Fbid = $(this).data("id")
+  var completeTask;
+    $.get("/api/users/"+Fbid, function(data) {
+      console.log(data)
+      var choresCompleted = data.completed_tasks;
+      choresCompleted++;
+      
+    });
+    $.get("api/chores/"+id, function(data) {
+      var id = data.val();
+      console.log(id);
+      var fbid = data-id.val();
+      console.log(fbid);
+      var status = data.status;
+      console.log(status);
+    });
 });
-}
