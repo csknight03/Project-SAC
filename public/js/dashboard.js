@@ -8,7 +8,6 @@ var FacebookID = localStorage.getItem("uid")
 //###################################################################//
 
 
-
 //###################################################################//
 // FUNCTION THAT DYNAMICALLY CHANGES THE DOM CONTENTS
 
@@ -27,6 +26,11 @@ var getNewUser = function(id){
         var role = data.role
 
         localStorage.setItem("role", role)
+
+        if(role === "Child"){
+          console.log("You are a Child")
+          $(".admin-buttons").hide()
+        }
 
         var dollarAmmount = points_banked / 100;
         $("#chores-submit").attr("data", Fbid)
