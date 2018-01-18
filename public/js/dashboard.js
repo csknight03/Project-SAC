@@ -24,6 +24,9 @@ var getNewUser = function(id){
         var points_available = data.points_available
         var picture_url = data.picture_url
         var Fbid = data.Fbid
+        var role = data.role
+
+        localStorage.setItem("role", role)
 
         var dollarAmmount = points_banked / 100;
         $("#chores-submit").attr("data", Fbid)
