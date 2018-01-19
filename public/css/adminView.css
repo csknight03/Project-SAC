@@ -1,84 +1,85 @@
 #header {
     min-height: 205px;
     font-family: 'Bungee', cursive;
-    background: rgb(219, 218, 214);  /* fallback for old browsers */
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXWMQ5kIsIOw9Zpq4MZ19vMbQfYH2bOPxMU-wSXgXUGn17kidy");
+    /* fallback for old browsers */
+    background-size: 100%;
     -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 75%, 50% 100%, 0% 75%, 0 0);
     clip-path: polygon(50% 0%, 100% 0, 100% 75%, 50% 100%, 0% 75%, 0 0);
-    
+    margin-bottom: 100px;
 }
 
-.bg-secondary{
+.bg-secondary {
     background-color: #F0F0F0!important;
 }
 
-.card{
+.card {
     color: #CE5848!important;
     margin-bottom: 2%;
-    border: 1px solid #CE5848;
+    border: 1px solid gainsboro;
     background: url("https://s-media-cache-ak0.pinimg.com/originals/b7/d8/28/b7d828c8d9c5b67d46b63caf00ab1c2e.jpg")
 }
 
-.main-title{
+.main-title {
     margin-top: 50px;
     color: #CE5848;
     font-family: 'Bungee', cursive;
     font-size: 4rem;
+    text-shadow: -1.5px -1.5px 0 #C6C6C6, 1.5px -1.5px 0 #C6C6C6, -1.5px 1.5px 0 #C6C6C6, 1.5px 1.5px 0 #C6C6C6;
 }
 
-.title{
+.title {
     margin-top: 50px;
     color: grey;
     font-family: 'Bungee', cursive;
     font-size: 2.5rem;
 }
 
-.name-title{
+.name-title {
     margin-top: 50px;
     color: #CE5848;
     font-family: 'Bungee', cursive;
     font-size: 1rem;
 }
 
-
-.family-image-dashboard{
+.family-image-dashboard {
     border-radius: 999px;
-    border: 5px solid white;
+    border: 5px solid whitesmoke;
     height: 9rem;
     width: 9rem;
     z-index: 999!important;
     margin-bottom: 10px;
 }
 
-
-#home-button{
+#home-button {
     font-size: 2.5rem;
     color: #CE5848;
-    margin-left: 2%;
-    margin-top: 2%;
+    margin-left: 3%;
+    margin-top: 3%;
     z-index: 999;
     position: relative;
+    text-shadow: -.8px -.8px 0 #C6C6C6, .8px -.8px 0 #C6C6C6, -.8px .8px 0 #C6C6C6, .8px .8px 0 #C6C6C6;
 }
 
-
-#dashboard-button{
+#dashboard-button {
     font-size: 2.5rem;
     color: #CE5848;
     margin-left: 1%;
     margin-top: 2%;
     z-index: 999;
     position: relative;
+    text-shadow: -.8px -.8px 0 #C6C6C6, .8px -.8px 0 #C6C6C6, -.8px .8px 0 #C6C6C6, .8px .8px 0 #C6C6C6;
 }
 
-
-#errorMessage{
+#errorMessage {
     margin-top: 12%;
 }
 
-.userPointValue{
+.userPointValue {
     font-size: 1.5rem;
 }
 
-.userDollarValue{
+.userDollarValue {
     font-size: 1.5rem;
 }
 
@@ -90,11 +91,9 @@
     left: 0;
     z-index: 1030;
     background-color: #333333;
-    opacity:0.8; 
-  }
-
-  .blur {
-    -webkit-filter: blur(5px) grayscale(50%);
+    opacity: 0.8;
 }
 
-
+.blur {
+    -webkit-filter: blur(5px) grayscale(50%);
+}
