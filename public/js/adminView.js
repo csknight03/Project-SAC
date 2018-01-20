@@ -186,7 +186,6 @@ var updateCashButton = function () {
 
 
 $(".newPointsSubmit").on("click", function () {
-
   var Fbid = $(this).attr("data")
   console.log(Fbid)
 
@@ -215,6 +214,65 @@ $(".newPointsSubmit").on("click", function () {
 
 })
 
+// ###################
+// PAYPAL BUTTON
+ // Render the PayPal button
+$("#admin-users").on("click", ".change-points", function(){
+  var cashoutValue;
+  var Fbid = $(this).data("id");
+  $.get("/api/users/"+Fbid, function(data) {
+   console.log(data)
+   cashoutValue = (data.points_banked) / 100;
+   console.log(cashoutValue);
+
+   paypal.Button.render({
+    
+    // Set your environment
+
+    env: 'sandbox', // sandbox | production
+
+    // Specify the style of the button
+
+    style: {
+        label: 'paypal',
+        size:  'medium',    // small | medium | large | responsive
+        shape: 'rect',     // pill | rect
+        color: 'blue',     // gold | blue | silver | black
+        tagline: false    
+    },
+
+    // PayPal Client IDs - replace with your own
+    // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+
+    client: {
+        sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
+        production: 'ARX7ir1mBdEA37QQnpt2sJKHFH9-IUzuXWeb-vXD4XDg79CXpXj8d-IB4xD2AJc6xcLZBWSXFVq0CFPU'
+    },
+
+    payment: function(data, actions) {
+        return actions.payment.create({
+            payment: {
+                transactions: [
+                    {
+                        amount: { total: cashoutValue, currency: 'USD' }
+                    }
+                ]
+            }
+        });
+    },
+
+    onAuthorize: function(data, actions) {
+        return actions.payment.execute().then(function() {
+            window.alert('Payment Complete!');
+        });
+    }
+
+}, '#paypal-button-container');
 
 
+});
+});
+
+ 
+        
 
