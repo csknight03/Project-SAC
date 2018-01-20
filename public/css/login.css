@@ -7,7 +7,7 @@
     height: 100vh;
     -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 88%, 50% 100%, 0 87%, 0 0);
     clip-path: polygon(50% 0%, 100% 0, 100% 88%, 50% 100%, 0 87%, 0 0);
-    overflow: scroll;
+    overflow: auto;
 }
 
 .website-title {
@@ -217,11 +217,11 @@
 }
 
 .blur1 {
-    -webkit-filter: blur(1px);
-    -moz-filter: blur(1px);
-    -o-filter: blur(1px);
-    -ms-filter: blur(1px);
-    filter: blur(1px);
+    -webkit-filter: blur(1.5px);
+    -moz-filter: blur(1.5px);
+    -o-filter: blur(1.5px);
+    -ms-filter: blur(1.5px);
+    filter: blur(1.5px);
 }
 
 .blur2 {
