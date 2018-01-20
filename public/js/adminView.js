@@ -185,10 +185,7 @@ var updateCashButton = function () {
 }
 
 
-$(".newPointsSubmit").on("click", function () {
-  var Fbid = $(this).attr("data")
-  console.log(Fbid)
-
+var cashSuccess = function (Fbid) {
   var updatedUser = {
     points_banked: 0
   };
@@ -205,6 +202,7 @@ $(".newPointsSubmit").on("click", function () {
       successMessage.text("Successfully Cashed Out!")
       $("#message").append(successMessage)
       $("#userPoints").text(0)
+      $("#userDollar").text(0)
 
       setTimeout(function(){
         window.location.href = "/admin";
@@ -212,7 +210,7 @@ $(".newPointsSubmit").on("click", function () {
       
     });
 
-})
+};
 
 // ###################
 // PAYPAL BUTTON
@@ -224,7 +222,7 @@ $("#admin-users").on("click", ".change-points", function(){
    console.log(data)
    cashoutValue = (data.points_banked) / 100;
    console.log(cashoutValue);
-
+   $(".newPointsSubmit").empty();
    paypal.Button.render({
     
     // Set your environment
@@ -263,7 +261,7 @@ $("#admin-users").on("click", ".change-points", function(){
 
     onAuthorize: function(data, actions) {
         return actions.payment.execute().then(function() {
-            window.alert('Payment Complete!');
+            cashSuccess(Fbid);
         });
     }
 
