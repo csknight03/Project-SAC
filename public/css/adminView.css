@@ -21,11 +21,11 @@
 }
 
 .main-title {
-    margin-top: 50px;
+    margin-top: 70px;
     color: #CE5848;
     font-family: 'Bungee', cursive;
-    font-size: 4rem;
-    text-shadow: -1.5px -1.5px 0 #C6C6C6, 1.5px -1.5px 0 #C6C6C6, -1.5px 1.5px 0 #C6C6C6, 1.5px 1.5px 0 #C6C6C6;
+    font-size: 2rem;
+    text-shadow: -1px -1px 0 #C6C6C6, 1px -1px 0 #C6C6C6, -1px 1px 0 #C6C6C6, 1px 1px 0 #C6C6C6;
 }
 
 .title {
@@ -33,6 +33,7 @@
     color: grey;
     font-family: 'Bungee', cursive;
     font-size: 2.5rem;
+    text-shadow: -1px -1px 0 #C6C6C6, 1px -1px 0 #C6C6C6, -1px 1px 0 #C6C6C6, 1px 1px 0 #C6C6C6;
 }
 
 .name-title {
