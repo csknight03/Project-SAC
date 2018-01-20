@@ -66,7 +66,7 @@ $.get("/api/users/" + FacebookID, function (data) {
       var col2 = $("<div>")
       col2.addClass("col-sm-5")
 
-      var button1 = $('<button type="button" class="btn btn-success">Cash Out</button>')
+      var button1 = $('<button type="button" class="btn btn-success change-points" data-toggle="modal" data-target="#cashOutModal" data-id=' + data[i].Fbid + '>Cash Out</button>')
       var button2 = $('<button type="button" class="btn btn-secondary change-role" data-toggle="modal" data-target="#exampleModal" data-id=' + data[i].Fbid + '>User Role</button>')
 
 
@@ -96,6 +96,7 @@ $.get("/api/users/" + FacebookID, function (data) {
 
 //#############################################################//
 var newID;
+var newPointsID;
 
 //#############################################################//
 // Adding Correct Content to MODAL
@@ -106,6 +107,34 @@ $("#admin-users").on('click', '.change-role', function () {
   console.log(this)
   newID = dataId
   updateSaveButton()
+});
+
+$("#admin-users").on('click', '.change-points', function () {
+  var dataId = $(this).data("id")
+  console.log(dataId)
+  console.log(this)
+  newPointsID = dataId
+  $.get("/api/users/" + dataId, function (data) {
+    console.log(data)
+    $("#userPoints").text(data.points_banked)
+    var dollarAmmount = data.points_banked/ 100
+    $("#userDollar").text(dollarAmmount)
+
+    $('.count').each(function () {
+      $(this).prop('Counter',0).animate({
+          Counter: $(this).text()
+      }, {
+          duration: 1000,
+          easing: 'swing',
+          step: function (now) {
+              $(this).text(Math.ceil(now));
+          }
+      });
+  });
+
+  });
+
+  updateCashButton()
 });
 
 
@@ -119,7 +148,17 @@ $(".newRoleSubmit").on("click", function () {
     role: NewRole
   };
 
+if(Fbid === FacebookID){
 
+  var error = $('<div class="alert alert-danger" role="alert">')
+  error.text("Cannot Update Your Own Profile.")
+  console.log("No Can Do!")
+  $("#error-message").append(error)
+
+  setTimeout(function(){
+    $("#error-message").fadeOut(1000)
+  }, 2000);
+}else{
   $.ajax({
       method: "PUT",
       url: "/api/users/" + Fbid,
@@ -129,6 +168,7 @@ $(".newRoleSubmit").on("click", function () {
       
       window.location.href = "/admin";
     });
+  }
 
 })
 
@@ -137,3 +177,44 @@ var updateSaveButton = function () {
 
   $(".newRoleSubmit").attr("data", newID)
 }
+
+var updateCashButton = function () {
+
+  $(".newPointsSubmit").attr("data", newPointsID)
+  console.log(this)
+}
+
+
+$(".newPointsSubmit").on("click", function () {
+
+  var Fbid = $(this).attr("data")
+  console.log(Fbid)
+
+  var updatedUser = {
+    points_banked: 0
+  };
+
+  $.ajax({
+      method: "PUT",
+      url: "/api/users/" + Fbid,
+      data: updatedUser
+    })
+    .done(function () {
+      var successMessage = $("<div>")
+      successMessage.addClass("alert alert-success")
+      successMessage.attr("role", "alert")
+      successMessage.text("Successfully Cashed Out!")
+      $("#message").append(successMessage)
+      $("#userPoints").text(0)
+
+      setTimeout(function(){
+        window.location.href = "/admin";
+      }, 2500);
+      
+    });
+
+})
+
+
+
+

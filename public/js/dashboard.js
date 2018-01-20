@@ -8,7 +8,6 @@ var FacebookID = localStorage.getItem("uid")
 //###################################################################//
 
 
-
 //###################################################################//
 // FUNCTION THAT DYNAMICALLY CHANGES THE DOM CONTENTS
 
@@ -24,6 +23,14 @@ var getNewUser = function(id){
         var points_available = data.points_available
         var picture_url = data.picture_url
         var Fbid = data.Fbid
+        var role = data.role
+
+        localStorage.setItem("role", role)
+
+        if(role === "Child"){
+          console.log("You are a Child")
+          $(".admin-buttons").hide()
+        }
 
         var dollarAmmount = points_banked / 100;
         $("#chores-submit").attr("data", Fbid)
@@ -37,7 +44,7 @@ var getNewUser = function(id){
           $(this).prop('Counter',0).animate({
               Counter: $(this).text()
           }, {
-              duration: 2000,
+              duration: 1000,
               easing: 'swing',
               step: function (now) {
                   $(this).text(Math.ceil(now));

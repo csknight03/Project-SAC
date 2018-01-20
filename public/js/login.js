@@ -213,6 +213,40 @@ $(document).ready(function () {
 $(window).scroll(function () {
     // the < 850 here means 'less than 500px'
 
+    if ($(this).scrollTop() < 110) {
+        $("#login-page").removeClass("blur1")
+    }
+    if ($(this).scrollTop() > 110) {
+        $("#login-page").addClass("blur1")
+    }
+
+    if ($(this).scrollTop() < 120) {
+        $("#login-page").removeClass("blur2")
+    }
+    if ($(this).scrollTop() > 120) {
+        $("#login-page").addClass("blur2")
+    }
+    if ($(this).scrollTop() < 130) {
+        $("#login-page").removeClass("blur3")
+    }
+    if ($(this).scrollTop() > 130) {
+        $("#login-page").addClass("blur3")
+    }
+
+    if ($(this).scrollTop() < 140) {
+        $("#login-page").removeClass("blur4")
+    }
+    if ($(this).scrollTop() > 140) {
+        $("#login-page").addClass("blur4")
+    }
+
+
+    if ($(this).scrollTop() < 150) {
+        $("#login-page").removeClass("blur5")
+    }
+    if ($(this).scrollTop() > 150) {
+        $("#login-page").addClass("blur5")
+    }
 
     if ($(this).scrollTop() > 400) {
         $(".first-image").animate({
@@ -322,4 +356,23 @@ function validate(e) {
 
 //#######################################################################//
 //#######################################################################//
+
+
+//#######################################################################//
+// TEXT FADING
+
+$(window).scroll(function(){
+    $(".website-title").css("opacity", 1 - $(window).scrollTop() / 250);
+  });
+  $(window).scroll(function(){
+    $(".Header-title--home").css("opacity", 1 - $(window).scrollTop() / 250);
+  });
+
+  $(window).scroll(function(){
+    $(".first-section").css("opacity", 0 + $(window).scrollTop() / 450);
+  });
+
+  $(window).scroll(function(){
+    $(".second-section").css("opacity", 0 + $(window).scrollTop() / 450);
+  });
 
