@@ -7,12 +7,7 @@ module.exports = function(app) {
     db.Chore.findAll({
       include: [
         {
-          model: db.User,
-          include: [
-            {
-              model: db.Family
-            }
-          ]
+          model: db.User
         }
       ]
     }).then(function(dbChore) {
@@ -24,7 +19,7 @@ module.exports = function(app) {
   app.get("/api/chores/:id", function(req, res) {
     db.Chore.findOne({
       where: {
-        id: req.params.id
+        UserFbid: req.params.id
       },
       include: [
         {
@@ -51,6 +46,24 @@ module.exports = function(app) {
       }
     }).then(function(dbChore) {
       res.json(dbChore);
+    });
+  });
+
+  // UPDATE A NEW CHORE
+  app.put("/api/chores/:id", function(req, res) {
+    db.Chore.findOne({
+      where: {
+        UserFbid: req.params.id
+      },
+      // include: [
+      //   {
+      //     model: db.User
+      //   }
+      // ]
+    }).then(function(dbChore) {
+      db.Chore.updateAttributes({
+        status: req.body.status
+      });
     });
   });
 

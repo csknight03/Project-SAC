@@ -7,6 +7,14 @@ var localStorageLastName = localStorage.getItem("lastName")
 var FacebookID = localStorage.getItem("uid")
 //###################################################################//
 
+// ALEX YOU'RE AN IDIOT FIX THIS THE RIGHT WAY
+
+// localStorage.setItem("role", role)
+
+//         if(role === "Child"){
+//           console.log("You are a Child")
+//           $(".admin-buttons").hide()
+//         }
 
 //###################################################################//
 // FUNCTION THAT DYNAMICALLY CHANGES THE DOM CONTENTS
@@ -24,13 +32,6 @@ var getNewUser = function(id){
         var picture_url = data.picture_url
         var Fbid = data.Fbid
         var role = data.role
-
-        localStorage.setItem("role", role)
-
-        if(role === "Child"){
-          console.log("You are a Child")
-          $(".admin-buttons").hide()
-        }
 
         var dollarAmmount = points_banked / 100;
         $("#chores-submit").attr("data", Fbid)
@@ -63,18 +64,15 @@ var getNewUser = function(id){
 
 
       for (j=0; j<data.Chores.length; j++){
-
-    
+        if (data.Chores[j].status === "not started") {
           var li = $("<li>")
           li.attr("data",data.Chores[j].id)
-
-
+          li.addClass("cb");
           // we will use this "data-id" to match to the Fbid so that users can only check off their own tasks
           // if users Fbid that is in local storage === this.data("id").val() -- then allow the API call to update the chore status.  
           // If not, hide the checkbox or something along those lines.
 
           li.attr("data-id",data.Fbid)
-
 
           var input = $("<input>")
           input.attr("name", "cb"+data.Chores[j].id)
@@ -90,9 +88,10 @@ var getNewUser = function(id){
           // createSVGEl(li) TRYING TO FIGURE OUT HOW TO MAKE THE SBG ANIMATION WORK ON OUR DYNAMICALLY CREATED CHORES. THIS DIDN'T WORK BUT I SWEAR I'M CLOSE
   
           $("#individualChores").append(li)
-
+          controlCheckbox( input[0], 'checkmark' );
+        }
+        // END OF APPENDING CHORES WITH "NOT STARTED" STATUSES
       }
-
     });
   }
 
@@ -257,21 +256,38 @@ $("#familyPictures").on("click", ".new-user-request", function(){
 });
 //############################################################//
 // CHECKING CHECKBOXES INCREMENTS NUMBER OF COMPLETED TASKS
-$(".cb").on("click", function(){
+$("#individualChores").on("click", ".cb", function(){
   var Fbid = $(this).data("id")
-  var completeTask;
+  var choresCompleted;
     $.get("/api/users/"+Fbid, function(data) {
       console.log(data)
-      var choresCompleted = data.completed_tasks;
+      choresCompleted = data.completed_tasks;
       choresCompleted++;
-      
-    });
-    $.get("api/chores/"+id, function(data) {
-      var id = data.val();
-      console.log(id);
-      var fbid = data-id.val();
-      console.log(fbid);
-      var status = data.status;
-      console.log(status);
-    });
+      var newFBID = $(this).attr("data")
+    }).then(
+      function() {
+        var completeTask = {
+          completed_tasks: choresCompleted
+        }
+        $.ajax("/api/users/"+Fbid, {
+          type: "PUT",
+          data: completeTask
+        }).then(
+          function() {
+            console.log("updated chore count");
+            location.reload();
+          }
+        );
+      }
+    );
 });
+
+
+
+
+
+// var currentTime = new Date();
+
+// var points = $("#chorePoints").val()
+//   console.log(points)
+    
