@@ -11,6 +11,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="./AnimatedCheckboxes/css/component.css">
     <link rel="stylesheet" href="./AnimatedCheckboxes/css/normalize.css">
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/adminView.css">
 
@@ -36,7 +37,7 @@
         </div>
         <div class="row" style="margin-top: -5%;">
             <div class="col-12">
-                <h1 class="animation-target text-center main-title">My Family</h1>
+                <h1 class="animation-target text-center main-title">Admin View</h1>
             </div>
         </div>
     </div>
@@ -83,6 +84,10 @@
                         <h3 class="title text-center">Finished Chores</h3>
                         <hr>
                     </div>
+                </div>
+                <div id="chores">
+
+                    
                 </div>
 
             </div>
@@ -175,7 +180,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-outline-success newPointsSubmit">Cash Out</button>
+                    <div class = "newPointsSubmit" id="paypal-button-container"></div>
                 </div>
             </div>
         </div>
@@ -195,6 +200,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="./AnimatedCheckboxes/js/svgcheckbx.js"></script>
     <script src="./AnimatedCheckboxes/js/modernizr.custom.js"></script>
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/adminView.js"></script>
 </body>

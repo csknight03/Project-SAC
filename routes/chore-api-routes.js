@@ -15,6 +15,22 @@ module.exports = function(app) {
     });
   });
 
+    // FIND CHORE BY STATUS
+    app.get("/api/chores/status", function(req, res) {
+      db.Chore.findOne({
+        where: {
+          status: "in progress"
+        },
+        include: [
+          {
+            model: db.User
+          }
+        ]
+      }).then(function(dbChore) {
+        res.json(dbChore);
+      });
+    });
+
     // FIND CHORE BY ID
   app.get("/api/chores/:id", function(req, res) {
     db.Chore.findOne({
@@ -50,21 +66,42 @@ module.exports = function(app) {
   });
 
   // UPDATE A NEW CHORE
-  app.put("/api/chores/:id", function(req, res) {
-    db.Chore.findOne({
+  // app.put("/api/chores/:Fbid/:id", function(req, res) {
+  //   db.Chores.update(
+  //     req.body,
+  //     {
+  //     where: {
+  //       UserFbid: req.params.Fbid,
+  //       id: req.params.id
+  //     },
+  //     include: [
+  //       {
+  //         model: db.User
+  //       }
+  //     ]
+  //   }).then(function(dbChore) {
+  //     res.json(dbChore);
+  //   });
+  // });
+
+  app.put("/api/chores/:Fbid/:id", function(req, res) {
+    db.Chore.update(
+      req.body,
+      {
       where: {
-        UserFbid: req.params.id
+        UserFbid: req.params.Fbid,
+        id: req.params.id
       },
-      // include: [
-      //   {
-      //     model: db.User
-      //   }
-      // ]
+      include: [
+        {
+          model: db.User,
+        }
+      ]
     }).then(function(dbChore) {
-      db.Chore.updateAttributes({
-        status: req.body.status
-      });
+      res.json(dbChore);
     });
   });
+
+
 
 };
