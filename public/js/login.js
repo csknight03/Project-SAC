@@ -113,7 +113,7 @@ $("#login").on("click", function() {
                     console.log("UID", LocalStorageUID)
 
                     setTimeout(function() {
-                       // location.reload()
+                        location.reload()
                     }, 1500);
 
                 } else {
