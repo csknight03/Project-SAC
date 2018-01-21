@@ -22,9 +22,8 @@ if(userRole=== "Child"){
 
 $.get("/api/users/" + FacebookID, function (data) {
   var familyID = data.FamilyUuid
+
   userRole = data.role
-  console.log("FAMILY ID IS:", familyID)
-  console.log(userRole)
 
   // Nested GET request to get the list of family members
   $.get("/api/families/" + familyID, function (data) {
@@ -36,6 +35,8 @@ $.get("/api/users/" + FacebookID, function (data) {
 
     for (i = 0; i < data.length; i++) {
 
+
+      /// adding user cards ///
       var div = $("<div>")
       div.addClass("col-md-6")
       var card = $("<div>")
@@ -85,6 +86,59 @@ $.get("/api/users/" + FacebookID, function (data) {
 
 
       $("#admin-users").append(div)
+
+
+
+
+
+      ////// adding chores with "in progress status" //////
+
+      for (k = 0; k < data[i].Chores.length; k++) {
+        console.log(data[i].Chores[k].chore)
+
+        if(data[i].Chores[k].status === "in progress"){
+
+      //  <div class="row newChore">
+      //     <div class="col-12 text-center chore-name text-secondary">Alexander Walz</div>
+      //     <div class="col-12 text-center chore-description">"Take Out The Trash"</div>
+      //     <div class="col-6 text-right"><button type="button" class="btn btn-outline-danger">Reject</button></div>
+      //     <div class="col-6 text-left"><button type="button" class="btn btn-outline-success">Accept</button></div>
+      // </div>
+
+          var row = $("<div>")
+              row.addClass("row newChore")
+
+          var col1 = $("<div>")
+              col1.addClass("col-12 text-center chore-name text-secondary")
+              col1.text(data[i].name)
+
+          var col2 = $("<div>")
+              col2.addClass("col-12 text-center chore-description")
+              col2.text(data[i].Chores[k].chore)
+
+          var col3 = $("<div>")
+              col3.addClass("col-6 text-right")
+          var recjectButton = $('<button type="button" class="btn btn-outline-danger reject-button" data-chore='+data[i].Chores[k].id+' data-user='+data[i].Fbid+'>Reject</button>')
+              col3.append(recjectButton)
+
+          var col4 = $("<div>")
+              col4.addClass("col-6 text-left")
+          var acceptButton = $('<button type="button" class="btn btn-outline-success accept-button" data-chore='+data[i].Chores[k].id+' data-user='+data[i].Fbid+' data-points='+data[i].Chores[k].chore_value+'>Accept</button>')
+              col4.append(acceptButton)
+
+
+              row.append(col1)
+              row.append(col2)
+              row.append(col3)
+              row.append(col4)
+
+              $("#chores").append(row)
+        } 
+
+      }
+
+
+
 
     }
   }
@@ -271,6 +325,108 @@ $("#admin-users").on("click", ".change-points", function(){
 });
 });
 
- 
-        
+//####################################################//
+// Reject Button Click Event
+
+$("#chores").on("click", ".reject-button", function(){
+  $(this).parent('div').parent('div').addClass('fadeMe');
+console.log(this)
+  var newStatus = {
+    status: "not started"
+  }
+
+  var Fbid = $(this).attr("data-user")
+  var Dbid = $(this).attr("data-chore")
+
+  console.log(Fbid)
+  console.log(Dbid)
+
+  $.ajax("/api/chores/" + Fbid + "/" + Dbid, {
+    type: "PUT",
+    data: newStatus
+  }).then(
+    function () {
+      console.log("updated chore status");
+      //location.reload();
+      $(".fadeMe").hide()
+    }
+  );
+
+})
+
+//####################################################//
+//####################################################//
+
+var newPoints;
+
+//####################################################//
+// Accept Button Click Event
+
+$("#chores").on("click", ".accept-button", function () {
+  $(this).parent('div').parent('div').addClass('fadeMe');
+  pointValue = $(this).attr("data-points")
+  console.log("New Points")
+  console.log(pointValue)
+  var currentPoints;
+  var Fbid = $(this).attr("data-user")
+  var Dbid = $(this).attr("data-chore")
+
+  $.get("/api/users/" + Fbid, function (userData) {
+    currentPoints = userData.points_banked
+
+  }).done(function () {
+
+    console.log("Second New Points")
+    console.log(pointValue)
+
+    var num1 = parseInt(currentPoints)
+    var num2 = parseInt(pointValue)  //<!--ERROR IS HERE -->
+    console.log("num1")
+    console.log(num1)
+    console.log("num2")
+    console.log(num2)  //<!--ERROR IS HERE -->
+
+    var value = num1 + num2
+    var finalValue = parseInt(value)
+
+    console.log("finalValue")
+    console.log(finalValue)
+
+    var newStatus = {
+      status: "complete"
+    }
+
+    var newPoints = {
+      points_banked: finalValue
+    }
+
+    console.log(Fbid)
+    console.log(Dbid)
+
+    $.ajax("/api/users/" + Fbid, {
+      type: "PUT",
+      data: newPoints
+    }).then(
+      function () {
+        console.log("updated chore status and points");
+        //location.reload();
+        $(".fadeMe").hide()
+      }
+      );
+
+
+
+      $.ajax("/api/chores/" + Fbid + "/" + Dbid, {
+        type: "PUT",
+        data: newStatus
+      }).then(
+        function () {
+          console.log("updated chore status");
+        })
+
+  })
+})
+
+//####################################################//
+//####################################################//
 

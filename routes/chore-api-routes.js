@@ -15,6 +15,22 @@ module.exports = function(app) {
     });
   });
 
+    // FIND CHORE BY STATUS
+    app.get("/api/chores/status", function(req, res) {
+      db.Chore.findOne({
+        where: {
+          status: "in progress"
+        },
+        include: [
+          {
+            model: db.User
+          }
+        ]
+      }).then(function(dbChore) {
+        res.json(dbChore);
+      });
+    });
+
     // FIND CHORE BY ID
   app.get("/api/chores/:id", function(req, res) {
     db.Chore.findOne({

@@ -98,3 +98,17 @@
 .blur {
     -webkit-filter: blur(5px) grayscale(50%);
 }
+
+.chore-description{
+    font-size: 1.5rem;
+    color: #CE5848;
+}
+
+.chore-name{
+    font-family: 'Bungee', cursive;
+
+}
+
+.newChore{
+    margin-top: 5%;
+}

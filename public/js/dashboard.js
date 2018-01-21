@@ -186,6 +186,8 @@ $("#chores-submit").on("click", function () {
   if (points === "") {
     console.log("EMPTY POINT VALUE")
     $("#chorePoints").addClass("error")
+  }else if (typeof points === "string" ){
+    $("#chorePoints").addClass("error")
   } else if ($("#choreMessage").val() === "") {
     $("#chorePoints").removeClass("error")
     $("#choreMessage").addClass("error")
