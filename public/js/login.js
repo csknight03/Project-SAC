@@ -90,15 +90,15 @@ $("#login").on("click", function() {
 
                     });
 
-                    FB.api('/me', {
-                        fields: 'cover',
-                    }, function(response) {
-                        console.log("PHOTOS")
-                        console.log(response)
-                        localStorage.setItem("coverPicture", response.cover.source);
-                        LocalStorageCoverPicture = localStorage.getItem("coverPicture")
+                    // FB.api('/me', {
+                    //     fields: 'cover',
+                    // }, function(response) {
+                    //     console.log("PHOTOS")
+                    //     console.log(response)
+                    //     localStorage.setItem("coverPicture", response.cover.source);
+                    //     LocalStorageCoverPicture = localStorage.getItem("coverPicture")
 
-                    });
+                    // });
 
 
                     FB.api('/me', {
@@ -109,8 +109,6 @@ $("#login").on("click", function() {
 
                     });
 
-                    console.log("FIRST NAME", LocalStorageFirstName)
-                    console.log("UID", LocalStorageUID)
 
                     setTimeout(function() {
                         location.reload()
