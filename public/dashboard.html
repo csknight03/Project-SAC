@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SAC | My Family</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One|Permanent+Marker|Yellowtail|Quattrocento+Sans|Bungee" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One|Permanent+Marker|Yellowtail|Quattrocento+Sans|Bungee"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="./AnimatedCheckboxes/css/component.css">
     <link rel="stylesheet" href="./AnimatedCheckboxes/css/normalize.css">
     <link rel="stylesheet" href="./css/index.css">
@@ -18,12 +23,12 @@
 </head>
 
 <body>
-<div class="container-image"></div>
-    <div id="header">
+    <div class="container-image"></div>
+    <div id="header" class="blur-img">
         <div class="row">
             <div class="col-12 text-left">
-                <a href="/">
-                    <i class="fa fa-home" aria-hidden="true" id="home-button"></i>
+                <a href="/" style="text-decoration: none;">
+                    <h4 id="home-button">Home</h4>
                 </a>
             </div>
         </div>
@@ -34,23 +39,21 @@
         </div>
     </div>
 
+    <div class="container">
+        <hr>
+        <br>
 
-
-    <div class="row profile-name-fix">
-        <div class="col-12 text-center">
-            <h1 id="current-profile-name"></h1>
-        </div>
     </div>
 
 
 
-
-    <div class="row" style="margin-top: -100px; margin-bottom: 120px;">
+    <div class="row" style="margin-bottom: 120px;">
 
 
         <!-- START OF ROUND FAMILY PICTURES ON THE LEFT HAND SIDE -->
+        <div class="col-1"></div>
 
-        <div class="col-sm-4 col-md-2 text-center" id="familyPictures" style="border-top-right-radius: 50px; border-bottom-left-radius: 50px;">
+        <div class="col-sm-3 col-md-2 text-center" id="familyPictures" style="border-top-right-radius: 50px; border-bottom-left-radius: 50px;">
 
 
 
@@ -59,196 +62,214 @@
 
         <!-- END OF ROUND FAMILY PICTURES -->
 
-        <div class="col-sm-8 col-md-10" id="choresContent">
-            <div class="container">
-                <div class="row">
-                    <div class="col-8 choreSection">
+        <div class="col-6" id="choresContent">
+                <div class="choreSection">
 
 
 
 
 
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
 
-                        <!-- START OF CHORES CONTAINER -->
+                    <!-- START OF CHORES CONTAINER -->
 
-                        <div id="choresList">
-
-
-                            <form class="ac-custom ac-checkbox ac-checkmark" id="choresForm">
-                                <ul id="individualChores">
-
-                                    <!-- ADD NEW CHORES HERE -->
-
-                                    <li>
-                                        <input id="cb1" name="cb1" type="checkbox" class="cb">
-                                        <label for="cb1">Efficiently unleash information</label>
-                                    </li>
-                                    <li>
-                                        <input id="cb2" name="cb2" type="checkbox" class="cb">
-                                        <label for="cb2">Quickly maximize timely deliverables</label>
-                                    </li>
-                                    <li>
-                                        <input id="cb3" name="cb3" type="checkbox" class="cb">
-                                        <label for="cb3">Dramatically maintain solutions</label>
-                                    </li>
-                                    <li>
-                                        <input id="cb4" name="cb4" type="checkbox" class="cb">
-                                        <label for="cb4">Completely synergize relationships</label>
-                                    </li>
-                                    <li>
-                                        <input id="cb5" name="cb5" type="checkbox" class="cb">
-                                        <label for="cb5">Professionally cultivate customer service</label>
-                                    </li>
-                                </ul>
-
-
-                            </form>
-
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-
+                    <div id="choresList">
+                        <div class="col-12 text-center text-white">
+                            <h1 id="current-profile-name"></h1>
                         </div>
 
+
+
+                        <form class="ac-custom ac-checkbox ac-checkmark" id="choresForm">
+                            <ul id="individualChores">
+
+                                <!-- ADD NEW CHORES HERE -->
+
+                                <li>
+                                    <input id="cb1" name="cb1" type="checkbox" class="cb">
+                                    <label for="cb1">Efficiently unleash information</label>
+                                </li>
+                                <li>
+                                    <input id="cb2" name="cb2" type="checkbox" class="cb">
+                                    <label for="cb2">Quickly maximize timely deliverables</label>
+                                </li>
+                                <li>
+                                    <input id="cb3" name="cb3" type="checkbox" class="cb">
+                                    <label for="cb3">Dramatically maintain solutions</label>
+                                </li>
+                                <li>
+                                    <input id="cb4" name="cb4" type="checkbox" class="cb">
+                                    <label for="cb4">Completely synergize relationships</label>
+                                </li>
+                                <li>
+                                    <input id="cb5" name="cb5" type="checkbox" class="cb">
+                                    <label for="cb5">Professionally cultivate customer service</label>
+                                </li>
+                            </ul>
+
+
+                        </form>
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
 
                     </div>
 
-                    <div class="col-4" style="margin-top: 10%;">
-                        <div class="row">
 
-                            <div class="col-6 text-center admin-buttons">
-
-
-                                <!-- **************   NEW CHORE MODAL  ************** -->
+                </div>
+        </div>
 
 
-                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
-                                        <i class="fa fa-plus" aria-hidden="true"></i> New Chore
-                                </button>
+        <div class="col-2" style="margin-top: 2%;">
+            <div class="row">
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header text-center">
-                                                <h5 class="modal-title text-white" id="exampleModalLabel">Create New Chore For <br><span class="modal-name"></span></h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-
-                                                <!-- MODAL FORM CONTENT TO ADD A NEW CHORE-->
-
-                                                <form>
-
-                                                    <div class="form-group">
-                                                        <strong><label for="chorePriority">Chore Priority</label></strong>
-                                                        <select class="form-control" id="chorePriority">
-                                                          <option>Important</option>
-                                                          <option>Kind Of Important</option>
-                                                          <option>Not Important</option>
-                                                        </select>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <strong><label for="chorePoints">Chore Point Value:</label></strong>
-                                                        <input type="integer" class="form-control" id="chorePoints" placeholder=" ex 400">
-                                                    </div>
+                <div class="col-12 text-center admin-buttons">
 
 
-                                                    <div class="form-group">
-                                                        <strong><label for="choreMessage" class="">Describe your Chore:</label></strong>
-                                                        <textarea class="form-control" id="choreMessage" rows="3"></textarea>
-                                                    </div>
-                                                </form>
+                    <!-- **************   NEW CHORE MODAL  ************** -->
 
 
-                                                <!-- END OF MODAL FORM CONTENT FOR A NEW CHORE ADDITION -->
-                                            </div>
+                    <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fa fa-plus" aria-hidden="true"></i> New Chore
+                    </button>
 
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header text-center">
+                                    <h5 class="modal-title text-white" id="exampleModalLabel">Create New Chore For
+                                        <br>
+                                        <span class="modal-name"></span>
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
 
+                                    <!-- MODAL FORM CONTENT TO ADD A NEW CHORE-->
 
-                                            <!-- CHORSE SUBMIT BUTTON -->
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary" data="" id="chores-submit">Save changes</button>
-                                            </div>
+                                    <form>
 
-
-
+                                        <div class="form-group">
+                                            <strong>
+                                                <label for="chorePriority">Chore Priority</label>
+                                            </strong>
+                                            <select class="form-control" id="chorePriority">
+                                                <option>Important</option>
+                                                <option>Kind Of Important</option>
+                                                <option>Not Important</option>
+                                            </select>
                                         </div>
-                                    </div>
+
+                                        <div class="form-group">
+                                            <strong>
+                                                <label for="chorePoints">Chore Point Value:</label>
+                                            </strong>
+                                            <input type="integer" class="form-control" id="chorePoints" placeholder=" ex 400">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <strong>
+                                                <label for="choreMessage" class="">Describe your Chore:</label>
+                                            </strong>
+                                            <textarea class="form-control" id="choreMessage" rows="3"></textarea>
+                                        </div>
+                                    </form>
+
+
+                                    <!-- END OF MODAL FORM CONTENT FOR A NEW CHORE ADDITION -->
                                 </div>
 
-                                <!-- END OF FULL MODAL -->
 
 
-
-
-                            </div>
-
-                            <div class="col-6 text-center admin-buttons">
-
-
-                                <!-- **************   NEW CHORE MODAL  ************** -->
-
-
-                                <a href="/admin"><button type="button" class="btn btn-secondary" >
-                                    <i class="fa fa-user" aria-hidden="true" style="color: white;"></i>  Admin View
-                                </button></a>
-                            </div>
-
-                            <!-- POINTS SECTION IN THE TOP RIGHT -->
-
-                            <div class="col-6 text-center">
-                                <br>
-
-                                <div class="card userValues">
-                                    <div class="card-header">
-                                        Points
-                                    </div>
-                                    <div class="card-body">
-                                        <!-- DYNAMICALLY ADD POINTS FROM DATABASE HERE -->
-                                        <p class="userPointValue count">0</p>
-                                    </div>
+                                <!-- CHORSE SUBMIT BUTTON -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" data="" id="chores-submit">Save changes</button>
                                 </div>
-                            </div>
-                            <div class="col-6 text-center">
-                                <br>
 
-                                <div class="card userValues">
-                                    <div class="card-header">
-                                        Bank
-                                    </div>
-                                    <div class="card-body">
-                                        <!-- CONVERT POINTS TO DOLLAR VALUE HERE -->
-                                        <p style="color: green; font-size: 1rem; font-size: 1.5rem; margin-top: -12px;">$<span class="userDollarValue count">0</span></p>
-                                    </div>
-                                </div>
+
+
                             </div>
                         </div>
-                        <br>
-                        <div class="row">
+                    </div>
+
+                    <!-- END OF FULL MODAL -->
 
 
-                            <!-- BADGES SECTION ON RIGHT HAND SIDE -->
 
-                            <div class="col-12 text-center">
-                                <h4 style="color:#CE5848"><i class="fa fa-trophy" aria-hidden="true"></i> Badges</h4>
-                                <hr>
-                            </div>
 
-                            <div class="col-12 text-center" id="badge-display">
-                                <img id="5" src="./images/5.png" class="d-none" alt="You've completed 5 tasks!">
-                            </div>
-                            <!-- <div class="col-12 text-center">
+                </div>
+
+                <div class="col-12 text-center admin-buttons">
+
+
+                    <!-- **************   NEW CHORE MODAL  ************** -->
+
+                    <br>
+                    <a href="/admin">
+                        <button type="button" class="btn btn-outline-secondary">
+                            <i class="fa fa-user" aria-hidden="true"></i> Admin View
+                        </button>
+                    </a>
+                </div>
+
+                <!-- POINTS SECTION IN THE TOP RIGHT -->
+
+                <div class="col-12 text-center">
+                    <br>
+
+                    <div class="card userValues">
+                        <div class="card-header">
+                            Points
+                        </div>
+                        <div class="card-body">
+                            <!-- DYNAMICALLY ADD POINTS FROM DATABASE HERE -->
+                            <p class="userPointValue count">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center">
+                    <br>
+
+                    <div class="card userValues">
+                        <div class="card-header">
+                            Bank
+                        </div>
+                        <div class="card-body">
+                            <!-- CONVERT POINTS TO DOLLAR VALUE HERE -->
+                            <p style="color: #28BFB7; font-size: 1rem; font-size: 1.5rem; margin-top: -12px;">$
+                                <span class="userDollarValue count">0</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+
+
+                <!-- BADGES SECTION ON RIGHT HAND SIDE -->
+
+                <div class="col-12 text-center">
+                    <h4 style="color:#28BFB7">
+                        <i class="fa fa-trophy" aria-hidden="true"></i> Badges</h4>
+                    <hr>
+                </div>
+
+                <div class="col-12 text-center" id="badge-display">
+                    <img id="5" src="./images/5.png" class="d-none" alt="You've completed 5 tasks!">
+                </div>
+                <!-- <div class="col-12 text-center">
                                 <span class="badge badge-success">Success</span>
                             </div>
                             <div class="col-12 text-center">
@@ -258,14 +279,27 @@
                                 <span class="badge badge-success">Success</span>
                             </div> -->
 
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <br>
-                <br>
             </div>
         </div>
+
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <div class="container">
+        <hr>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+
+
+
+
     </div>
 
     <div id="next-steps">
@@ -275,17 +309,17 @@
         <br>
         <div class="row justify-text-center">
             <div class="col-3"></div>
-            <div class="col-6 text-center">
-                <h1 style="color: #DD4F40; text-shadow: -.8px -.8px 0 #C6C6C6, .8px -.8px 0 #C6C6C6, -.8px .8px 0 #C6C6C6, .8px .8px 0 #C6C6C6;">What Now?</h1>
+            <div class="col-6 text-center text-white">
+                <h1>What Now?</h1>
             </div>
             <hr>
         </div>
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6 text-white">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi porro reprehenderit voluptate, tenetur, unde doloremque, eum atque totam perferendis veniam itaque neque numquam vel? Temporibus necessitatibus quia harum aspernatur excepturi.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil distinctio cum ab quo reprehenderit consectetur nulla, aspernatur praesentium cupiditate illo quibusdam possimus necessitatibus veniam placeat sunt delectus officiis ducimus
-                    quasi?
+                <p>Much like your day to day work life, your family life can be just as chaotic if not managed properly.  Here you add your daily
+                tasks to stay on top of things.  Once your family is finished with a task, they will check it off the list which will then appear in your
+                admin view.  Head over to your Admin page by clicking on "Admin View" on the right hand side of your screen.
                 </p>
             </div>
         </div>
@@ -295,9 +329,12 @@
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
     <script src="./AnimatedCheckboxes/js/svgcheckbx.js"></script>
