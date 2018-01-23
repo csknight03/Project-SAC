@@ -9,6 +9,18 @@ var FacebookID = localStorage.getItem("uid")
 
 // ALEX YOU'RE AN IDIOT FIX THIS THE RIGHT WAY
 
+var loggedInUser = function(FacebookID){
+$.get("/api/users/"+FacebookID,function(data){
+    var loggedInUserRole = data.role
+    console.log(loggedInUserRole)
+    if (loggedInUserRole === "Child"){
+        $(".admin-buttons").hide()
+    }
+})
+}
+
+loggedInUser(FacebookID)
+
 // localStorage.setItem("role", role)
 
 //         if(role === "Child"){
@@ -24,7 +36,6 @@ var getNewUser = function(id) {
     $("#individualChores").empty()
 
     $.get("/api/users/" + id, function(data) {
-        console.log(data)
         var name = data.name
         var gender = data.gender
         var points_banked = data.points_banked
@@ -110,12 +121,9 @@ getNewUser(FacebookID)
 
 $.get("/api/users/" + FacebookID, function(data) {
     var familyID = data.FamilyUuid
-    console.log("FAMILY ID IS:", familyID)
 
     // Nested GET request to get the list of family members
     $.get("/api/families/" + familyID, function(data) {
-        console.log(data)
-
         for (i = 0; i < data.length; i++) {
 
             var div = $("<div>")
