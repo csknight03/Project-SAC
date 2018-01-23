@@ -203,7 +203,7 @@ label {
 .choreSection{
     background: url("https://www.toptal.com/designers/subtlepatterns/patterns/bgnoise_lg.png");
     min-height: 550px;
-    z-index: 1;
+    z-index: -1;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     margin-bottom: -70px;
