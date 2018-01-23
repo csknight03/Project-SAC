@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SAC | My Family</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
-        crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One|Permanent+Marker|Yellowtail|Quattrocento+Sans|Bungee"
-        rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One|Permanent+Marker|Yellowtail|Quattrocento+Sans|Bungee" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="./AnimatedCheckboxes/css/component.css">
     <link rel="stylesheet" href="./AnimatedCheckboxes/css/normalize.css">
     <link rel="stylesheet" href="./css/index.css">
@@ -21,7 +18,7 @@
 </head>
 
 <body>
-
+<div class="container-image"></div>
     <div id="header">
         <div class="row">
             <div class="col-12 text-left">
@@ -32,7 +29,7 @@
         </div>
         <div class="row" style="margin-top: -5%;">
             <div class="col-12">
-                <h1 class="animation text-center title">My Family</h1>
+                <h1 class="text-center title">My Family</h1>
             </div>
         </div>
     </div>
@@ -48,12 +45,12 @@
 
 
 
-    <div class="row" style="margin-top: -100px;">
+    <div class="row" style="margin-top: -100px; margin-bottom: 120px;">
 
 
         <!-- START OF ROUND FAMILY PICTURES ON THE LEFT HAND SIDE -->
 
-        <div class="col-sm-4 col-md-2 text-center" id="familyPictures" style="border-right: 1px solid grey;">
+        <div class="col-sm-4 col-md-2 text-center" id="familyPictures" style="border-top-right-radius: 50px; border-bottom-left-radius: 50px;">
 
 
 
@@ -65,7 +62,7 @@
         <div class="col-sm-8 col-md-10" id="choresContent">
             <div class="container">
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-8 choreSection">
 
 
 
@@ -122,10 +119,10 @@
 
                     </div>
 
-                    <div class="col-4">
+                    <div class="col-4" style="margin-top: 10%;">
                         <div class="row">
 
-                            <div class="col-6 text-center">
+                            <div class="col-6 text-center admin-buttons">
 
 
                                 <!-- **************   NEW CHORE MODAL  ************** -->
@@ -140,7 +137,7 @@
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header text-center">
-                                                <h5 class="modal-title text-center" id="exampleModalLabel">Create New Chore For <span class="modal-name"></span></h5>
+                                                <h5 class="modal-title text-white" id="exampleModalLabel">Create New Chore For <br><span class="modal-name"></span></h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -152,22 +149,22 @@
                                                 <form>
 
                                                     <div class="form-group">
-                                                        <label for="chorePriority">Chore Priority</label>
+                                                        <strong><label for="chorePriority">Chore Priority</label></strong>
                                                         <select class="form-control" id="chorePriority">
                                                           <option>Important</option>
                                                           <option>Kind Of Important</option>
                                                           <option>Not Important</option>
                                                         </select>
-                                                      </div>
+                                                    </div>
 
                                                     <div class="form-group">
-                                                        <label for="chorePoints">Chore Point Value:</label>
-                                                        <input type="integer" class="form-control" id="chorePoints" placeholder="400">
-                                                      </div>
+                                                        <strong><label for="chorePoints">Chore Point Value:</label></strong>
+                                                        <input type="integer" class="form-control" id="chorePoints" placeholder=" ex 400">
+                                                    </div>
 
 
                                                     <div class="form-group">
-                                                        <label for="choreMessage" class="">Describe your Chore:</label>
+                                                        <strong><label for="choreMessage" class="">Describe your Chore:</label></strong>
                                                         <textarea class="form-control" id="choreMessage" rows="3"></textarea>
                                                     </div>
                                                 </form>
@@ -197,7 +194,7 @@
 
                             </div>
 
-                            <div class="col-6 text-center">
+                            <div class="col-6 text-center admin-buttons">
 
 
                                 <!-- **************   NEW CHORE MODAL  ************** -->
@@ -206,7 +203,7 @@
                                 <a href="/admin"><button type="button" class="btn btn-secondary" >
                                     <i class="fa fa-user" aria-hidden="true" style="color: white;"></i>  Admin View
                                 </button></a>
-                                </div>
+                            </div>
 
                             <!-- POINTS SECTION IN THE TOP RIGHT -->
 
@@ -248,7 +245,7 @@
                                 <hr>
                             </div>
 
-                            <div class="col-12 text-center">
+                            <div class="col-12 text-center" id="badge-display">
                                 <img id="5" src="./images/5.png" class="d-none" alt="You've completed 5 tasks!">
                             </div>
                             <!-- <div class="col-12 text-center">
@@ -279,35 +276,30 @@
         <div class="row justify-text-center">
             <div class="col-3"></div>
             <div class="col-6 text-center">
-                <h1 style="color: #DD4F40">What Now?</h1>
+                <h1 style="color: #DD4F40; text-shadow: -.8px -.8px 0 #C6C6C6, .8px -.8px 0 #C6C6C6, -.8px .8px 0 #C6C6C6, .8px .8px 0 #C6C6C6;">What Now?</h1>
             </div>
             <hr>
         </div>
         <div class="row">
             <div class="col-3"></div>
-            <div class="col-6 text-secondary">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi porro reprehenderit voluptate, tenetur, unde
-                    doloremque, eum atque totam perferendis veniam itaque neque numquam vel? Temporibus necessitatibus quia
-                    harum aspernatur excepturi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil distinctio
-                    cum ab quo reprehenderit consectetur nulla, aspernatur praesentium cupiditate illo quibusdam possimus
-                    necessitatibus veniam placeat sunt delectus officiis ducimus quasi?</p>
+            <div class="col-6 text-white">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi porro reprehenderit voluptate, tenetur, unde doloremque, eum atque totam perferendis veniam itaque neque numquam vel? Temporibus necessitatibus quia harum aspernatur excepturi.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil distinctio cum ab quo reprehenderit consectetur nulla, aspernatur praesentium cupiditate illo quibusdam possimus necessitatibus veniam placeat sunt delectus officiis ducimus
+                    quasi?
+                </p>
             </div>
         </div>
-        <br>
-        <br>
     </div>
     </div>
 
 
     </div>
-
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-        
+
     <script src="./AnimatedCheckboxes/js/svgcheckbx.js"></script>
     <script src="./AnimatedCheckboxes/js/modernizr.custom.js"></script>
     <script src="./js/index.js"></script>

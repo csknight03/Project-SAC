@@ -33,6 +33,22 @@ module.exports = function(app) {
     });
   });
 
+      // FIND USER BY FAMILYID
+      app.get("/api/users/family/:FamilyUuid", function(req, res) {
+        db.User.findAll({
+          where: {
+            FamilyUuid: req.params.FamilyUuid
+          },
+          include: [
+            {
+              model: db.Chore
+            }
+          ]
+        }).then(function(dbUser) {
+          res.json(dbUser);
+        });
+      });
+
 
     // CREATE A NEW USER
   app.post("/api/users", function(req, res) {

@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SAC | HOME</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One|Permanent+Marker|Yellowtail|Quattrocento+Sans|Bungee" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/index.css">
@@ -17,15 +16,17 @@
 
 <body>
 
-    
+
 
     <div id="login-page">
         <div class="row">
-            <div class="col-md-6"><div class="col-md-6 text-left">
+            <div class="col-md-6">
+                <div class="col-md-6 text-left">
 
-                <!-- LOGOUT BUTTON -->
-                <button type="button" class="btn btn-secondary" id="logout" scope="public_profile,email" onlogin="checkLoginState();"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
-            </div></div>
+                    <!-- LOGOUT BUTTON -->
+                    <button type="button" class="btn btn-secondary" id="logout" scope="public_profile,email" onlogin="checkLoginState();"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
+                </div>
+            </div>
 
 
             <div class="col-sm-12 col-md-6 text-center">
@@ -33,57 +34,71 @@
                 <!-- ANIMATED TITLE TEXT -->
                 <h1 class="text-white website-title animation-target">
                     <span class="Header-title">S</span><span class="Header-title">i</span><span class="Header-title">m</span><span class="Header-title">p</span><span class="Header-title">l</span><span class="Header-title">y</span>
-                    <span class="Header-title">A</span><span class="Header-title">s</span><span class="Header-title">s</span><span class="Header-title">i</span><span class="Header-title">g</span><span class="Header-title">n</span><span class="Header-title">e</span><span class="Header-title">d</span>
+                    <span class="Header-title">A</span><span class="Header-title">s</span><span class="Header-title">s</span><span class="Header-title">i</span><span class="Header-title">g</span><span class="Header-title">n</span><span class="Header-title">e</span>
+                    <span class="Header-title">d</span>
                     <span class="Header-title">C</span><span class="Header-title">h</span><span class="Header-title">o</span><span class="Header-title">r</span><span class="Header-title">e</span><span class="Header-title">s</span>
                 </h1>
                 <hr>
             </div>
         </div>
 
+
         <div class="row">
-                <div class="col-md-6"></div>
-                <div class="col-sm-12 col-md-6 text-center">
-                    <p class="website-title-subtext">
-                        <span class="Header-title--home" id="header-subtext">A better way to delegate</span></p>
-                        <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-sm-12 col-md-6 text-center">
+                <p class="website-title-subtext">
+                    <span class="Header-title--home" id="header-subtext" style="font-family: 'Quattrocento Sans', sans-serif;">A better way to delegate</span></p>
+                <div class="row">
 
-                            <!-- THREE NAVIGATION BUTTONS THAT APPEAR AFTER LOGIN -->
+                    <!-- THREE NAVIGATION BUTTONS THAT APPEAR AFTER LOGIN -->
 
-                           <div class="col-4 text-right" id="createButton"><a href="/families"> <button type="button" class="btn btn-secondary">New Family</button></a></div>
-                            <div class="col-4 text-center" id="joinButton"><button type="button" class="btn btn-secondary" id="joinExisting">Join Family</button></div>
-                            <a href="/dashboard"><div class="col-4 text-right" id="dashboardButton"><button type="button" class="btn btn-secondary" id="dashboard">Dashboard</button></div></a>
+                    <div class="col-4 text-right" id="createButton">
+                        <a href="/families"> <button type="button" class="btn btn-secondary">New Family</button></a>
+                    </div>
+                    <div class="col-4 text-center" id="joinButton"><button type="button" class="btn btn-secondary" id="joinExisting">Join Family</button></div>
+                    <a href="/dashboard">
+                        <div class="col-4 text-right" id="dashboardButton"><button type="button" class="btn btn-secondary" id="dashboard">Dashboard</button></div>
+                    </a>
 
-                            <!-- LOGIN BUTTON -->
-                            <div class="col-12 text-center">
-                            <div class="button" id="loginButton">
-                                    <div class="submit" id="login"><h3> <i class="fa fa-sign-in" aria-hidden="true"></i> Login</h3></div>
-                                    <div class="arrow">
-                                        <div class="top line"></div>
-                                        <div class="bottom line"></div>
-                                    </div>
-                                </div>
+                    <!-- LOGIN BUTTON -->
+                    <div class="col-12 text-center">
+                        <div class="button" id="loginButton">
+                            <div class="submit" id="login">
+                                <h3> <i class="fa fa-sign-in" aria-hidden="true"></i> Login</h3>
                             </div>
-
-
-                        </div>
-                        <br>
-
-                        <!-- FORM THAT TAKES IN JOIN CODE (APPEARS AFTER LOGIN AND CLICKING ON 'JOIN FAMILY') -->
-                        <div class="row" id="join-existing">
-                            <div class="col-3"></div>
-                            <div class="col-6">
-                                    <form id="join-form">
-                                            <div class="form-group">
-                                              <label for="joinCode">Join Code</label>
-                                              <input type="text" class="form-control" id="joinCode" placeholder="6bae1191-8818-3b6b-866d-bbb35025482c">
-                                              <small id="emailHelp" class="form-text text-muted">please enter in the join code that you were provided with</small>
-                                            </div>
-                                    </form>
+                            <div class="arrow">
+                                <div class="top line"></div>
+                                <div class="bottom line"></div>
                             </div>
-
                         </div>
+                    </div>
+
+
+                </div>
+                <br>
+
+                <!-- FORM THAT TAKES IN JOIN CODE (APPEARS AFTER LOGIN AND CLICKING ON 'JOIN FAMILY') -->
+                <div class="row" id="join-existing">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <form id="join-form">
+                            <div class="form-group text-white">
+                                <label for="joinCode">Join Code</label>
+                                <input type="text" class="form-control" id="joinCode" placeholder="6bae1191-8818-3b6b-866d-bbb35025482c">
+                                <small id="emailHelp" class="form-text text-white">please enter in the join code that you were provided with</small>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-3">
+                        <a href="/dashboard">
+                            <button type="icon" id="searchButton"><i class="fa fa-search"  aria-hidden="true"></i></button>
+                        </a>
+                    </div>
+
                 </div>
             </div>
+        </div>
 
 
 
@@ -92,134 +107,142 @@
     <div id="about-section">
 
 
-            <div class="container">
-                    <div class="row " >
-                        <div class="col-sm-12 col-md-5">
-                            <p class='text-secondary'>Roles for Admin Use</p>
-                            <h1 class="text-center">Create Your Family</h1>
-                            <h3>
-                                <span style="color: #DD4F40">Family Organization</span> just got better.</h3>
-                        </div>
-                    </div>
-                    <br>
-                    
-                    <div class="row profile-images-home" style="margin-top: 3%;">
-                        <div class="col-sm-6 col-md-4 col-lg-3 text-center first-image">
-                                <img src="http://images.politico.com/global//blogs/111027_tory_burch_click_ap_465.jpg" class="first-image family-image-home" alt="...">
-                                <h3 class="text-names text-center">Mom</h3>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4 col-lg-3 text-center second-image">
-                                <img  src="http://cdn-img.instyle.com/sites/default/files/styles/684xflex/public/images/2017/08/2017-chris-hemsworth.jpg?itok=7G8ZoEe9" class="family-image-home" alt="...">
-                                <h3 class="text-names text-center">Dad</h3>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4 col-lg-3 text-center third-image">
-                                <img  src="https://i.pinimg.com/736x/8b/0c/1a/8b0c1a9864244f2a830cbd900963a91d--cool-kids-haircuts-cute-little-boy-haircuts.jpg" class="family-image-home" alt="...">
-                                <h3 class="text-names text-center">James</h3>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4 col-lg-3 text-center fourth-image">
-                                <img src="https://s-media-cache-ak0.pinimg.com/originals/05/ab/68/05ab6838be0fb53ed2c41a4025d8ccde.jpg" class="family-image-home" alt="...">
-                                <h3 class="text-names text-center">Ellie</h3>
-                        </div>
-
-                    </div>
-                </div>
-                <hr>
-                    
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-7 text-center">
-                            
-                            <p style="margin-top: 0%;" class="chore-quote chore-quote-1"><i class="fa fa-quote-left" aria-hidden="true" style="color:#DD4F40"></i> Take Out The Trash Before Dad Gets Home <i class="fa fa-quote-right" aria-hidden="true" style="color:#DD4F40 "></i></p>
-                            <p class="chore-quote chore-quote-2"><i class="fa fa-quote-left" aria-hidden="true" style="color:#DD4F40"></i> Clean Your Bedroom before Saturday <i class="fa fa-quote-right" aria-hidden="true" style="color:#DD4F40 "></i></p>
-                            <p class="chore-quote chore-quote-3"><i class="fa fa-quote-left" aria-hidden="true" style="color:#DD4F40"></i> Mow The Lawn <i class="fa fa-quote-right" aria-hidden="true" style="color:#DD4F40 "></i></p>
-                            <p class="chore-quote chore-quote-4"><i class="fa fa-quote-left" aria-hidden="true" style="color:#DD4F40"></i> Clean The Bathroom <i class="fa fa-quote-right" aria-hidden="true" style="color:#DD4F40 "></i></p>
-                        </div>
-                            <div class="col-sm-12 col-md-5">
-                                <p class='text-secondary'>Time Activated</p>
-                                <h1>Assign Your Chores</h1>
-                                <h3>
-                                    Productivity.<span style="color: #DD4F40"> The Right Way</span>.</h3>
-                            </div>
-                        </div>
-
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <div class="fourth-background">
-                        <br>
-                        <br>
-
-                        <div class="row" id="background3">
-                            
-                            <div class="col-12 text-center points"><br><h1>Convert Your <span style="color: #DD4F40" class="points-text">Points</span> to <span style="color: #68886E;" class="points-text">Cash</span></h1></div>
-                            <div class="col-12 text-center"><h3>Convert Your <span style="color: #68886E">Cash</span> to <span style="color:#DD4F40;">Toys</span>.</h3><br><br></div>
-                        </div>
-                        <br>
-                    </div>
-
-
-        
-                </div>
-                <br>
-                <br>
-
-                <div class="container">
-                <div class="row">
-                    <div class="col-6 text-center"><h1 style="margin-top: 7%;color:#DD4F40;">Master Your Schedule.</h1><hr><h4>Teach Your Kids To Do The Same</h4></div>
-                    <div class="col-6 text-center"><img  class="calendarImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt0JQHEbmcy9AOTdlYM7VJpVEhk4w-OEQiUwpkVdfsSaI77F8b" alt=""></div>
+        <div class="container">
+            <div class="row first-section">
+                <div class="col-sm-12 col-md-5">
+                    <p class='text-secondary'>Roles for Admin Use</p>
+                    <h1 class="text-center">Create Your Family</h1>
+                    <h3>
+                        <span style="color: #DD4F40">Family Organization</span> just got better.</h3>
                 </div>
             </div>
-                <br>
-                <br>
-                <br>
-                <br>
+            <br>
 
-
-
-                <div id="secondary-background">
-                    <div class="container">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                                    <h2 class="display-4 text-center">Track progress. Earn Badges. <span style="color: white">Compete</span>.</h2>
-                                    <br>
-
-                                    <div class="row">
-                                        <div class="col-6 text-white">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus vero praesentium quod voluptate cupiditate mollitia impedit aperiam, natus, voluptas, rem nihil consequatur? Sunt perferendis esse, eos officiis error molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga explicabo laudantium odio adipisci labore rerum architecto, obcaecati, modi dolore, doloremque non quo quaerat. Dicta illo fuga eius, sed quod dolor!</p>
-                                        </div>
-                                        <div class="col-6 text-white">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus vero praesentium quod voluptate cupiditate mollitia impedit aperiam, natus, voluptas, rem nihil consequatur? Sunt perferendis esse, eos officiis error molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum eaque expedita quod necessitatibus dolor adipisci itaque eos temporibus sapiente, iusto provident voluptates voluptatibus commodi blanditiis illo assumenda quas, dicta quos?</p>
-                                            </div>
-                                     
-                                    </div>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                    </div>
+            <div class="row profile-images-home" style="margin-top: 3%;">
+                <div class="col-sm-6 col-md-4 col-lg-3 text-center first-image">
+                    <img src="http://images.politico.com/global//blogs/111027_tory_burch_click_ap_465.jpg" class="first-image family-image-home" alt="...">
+                    <h3 class="text-names text-center">Mom</h3>
                 </div>
 
-                <br>
-                <br>
-        
-                <script
-                src="https://code.jquery.com/jquery-3.2.1.js"
-                integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-                crossorigin="anonymous"></script>
-                <script src="./js/index.js"></script>
-                <script src="./js/login.js"></script>
+                <div class="col-sm-6 col-md-4 col-lg-3 text-center second-image">
+                    <img src="http://cdn-img.instyle.com/sites/default/files/styles/684xflex/public/images/2017/08/2017-chris-hemsworth.jpg?itok=7G8ZoEe9" class="family-image-home" alt="...">
+                    <h3 class="text-names text-center">Dad</h3>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3 text-center third-image">
+                    <img src="https://i.pinimg.com/736x/8b/0c/1a/8b0c1a9864244f2a830cbd900963a91d--cool-kids-haircuts-cute-little-boy-haircuts.jpg" class="family-image-home" alt="...">
+                    <h3 class="text-names text-center">James</h3>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3 text-center fourth-image">
+                    <img src="https://s-media-cache-ak0.pinimg.com/originals/05/ab/68/05ab6838be0fb53ed2c41a4025d8ccde.jpg" class="family-image-home" alt="...">
+                    <h3 class="text-names text-center">Ellie</h3>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-sm-12 col-md-7 text-center">
+
+                <p style="margin-top: 0%;" class="chore-quote chore-quote-1"><i class="fa fa-quote-left" aria-hidden="true" style="color:#DD4F40"></i> Take Out The Trash Before Dad Gets Home <i class="fa fa-quote-right" aria-hidden="true" style="color:#DD4F40 "></i></p>
+                <p class="chore-quote chore-quote-2"><i class="fa fa-quote-left" aria-hidden="true" style="color:#DD4F40"></i> Clean Your Bedroom before Saturday <i class="fa fa-quote-right" aria-hidden="true" style="color:#DD4F40 "></i></p>
+                <p class="chore-quote chore-quote-3"><i class="fa fa-quote-left" aria-hidden="true" style="color:#DD4F40"></i> Mow The Lawn <i class="fa fa-quote-right" aria-hidden="true" style="color:#DD4F40 "></i></p>
+                <p class="chore-quote chore-quote-4"><i class="fa fa-quote-left" aria-hidden="true" style="color:#DD4F40"></i> Clean The Bathroom <i class="fa fa-quote-right" aria-hidden="true" style="color:#DD4F40 "></i></p>
+            </div>
+            <div class="col-sm-12 col-md-5 second-section">
+                <p class='text-secondary'>Time Activated</p>
+                <h1>Assign Your Chores</h1>
+                <h3>
+                    Productivity.<span style="color: #DD4F40"> The Right Way</span>.</h3>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="fourth-background">
+            <br>
+            <br>
+
+            <div class="row" id="background3">
+
+                <div class="col-12 text-center points"><br>
+                    <h1>Convert Your <span style="color: #DD4F40" class="points-text">Points</span> to <span style="color: #68886E;" class="points-text">Cash</span></h1>
+                </div>
+                <div class="col-12 text-center">
+                    <h3>Convert Your <span style="color: #68886E">Cash</span> to <span style="color:#DD4F40;">Toys</span>.</h3><br><br></div>
+            </div>
+            <br>
+        </div>
+
+
+
+    </div>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6 text-center">
+                <h1 style="margin-top: 7%;color:#DD4F40;">Master Your Schedule.</h1>
+                <hr>
+                <h4>Teach Your Kids To Do The Same</h4>
+            </div>
+            <div class="col-6 text-center"><img class="calendarImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt0JQHEbmcy9AOTdlYM7VJpVEhk4w-OEQiUwpkVdfsSaI77F8b" alt=""></div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+    <div id="secondary-background">
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2 class="display-4 text-center">Track progress. Earn Badges. <span style="color: white">Compete</span>.</h2>
+            <br>
+
+            <div class="row">
+                <div class="col-6 text-white">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus vero praesentium quod voluptate cupiditate mollitia impedit aperiam, natus, voluptas, rem nihil consequatur? Sunt perferendis esse, eos officiis error molestiae?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga explicabo laudantium odio adipisci labore rerum architecto, obcaecati, modi dolore, doloremque non quo quaerat. Dicta illo fuga eius, sed quod dolor!</p>
+                </div>
+                <div class="col-6 text-white">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus vero praesentium quod voluptate cupiditate mollitia impedit aperiam, natus, voluptas, rem nihil consequatur? Sunt perferendis esse, eos officiis error molestiae?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum eaque expedita quod necessitatibus dolor adipisci itaque eos temporibus sapiente, iusto provident voluptates voluptatibus commodi blanditiis illo assumenda quas, dicta
+                        quos?
+                    </p>
+                </div>
+
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 
 </html>

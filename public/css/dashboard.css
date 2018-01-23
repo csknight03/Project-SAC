@@ -1,51 +1,65 @@
 #header {
-    /* background-color: #F0F0F0; */
-    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 59%, 59% 52%, 0 41%, 0 0);
-    clip-path: polygon(50% 0%, 100% 0, 100% 59%, 59% 52%, 0 41%, 0 0);
-    min-height: 405px;
+    min-height: 205px;
     font-family: 'Bungee', cursive;
-    background: #ADA996;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #F0F0F0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #F0F0F0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXWMQ5kIsIOw9Zpq4MZ19vMbQfYH2bOPxMU-wSXgXUGn17kidy");
+    /* fallback for old browsers */
+    background-size: 100%;
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 75%, 50% 100%, 0% 75%, 0 0);
+    clip-path: polygon(50% 0%, 100% 0, 100% 75%, 50% 100%, 0% 75%, 0 0);
+    margin-bottom: 100px;
 }
 
-.bg-secondary{
+
+
+.bg-secondary {
     background-color: #F0F0F0!important;
 }
 
-.card{
+.card {
     color: #CE5848!important;
 }
 
-.title{
-    margin-top: 50px;
+.title {
+    margin-top: 70px;
     color: #CE5848;
     font-family: 'Bungee', cursive;
     font-size: 4rem;
+    text-shadow: -1px -1px 0 #C6C6C6, 1px -1px 0 #C6C6C6, -1px 1px 0 #C6C6C6, 1px 1px 0 #C6C6C6;
 }
 
+#familyPictures {
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/bgnoise_lg.png");
+    min-height: 550px;
+}
 
-.family-image-dashboard{
-    border-radius: 999px;
-    border: 3px solid #C6C6C6;
-    height: 6rem;
-    width: 6rem;
+.card-header:first-child{
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/bgnoise_lg.png")
+}
+
+.family-image-dashboard {
+    border-color: #E9E7E4 #7c7c7c;
+    border-image: none;
+    border-radius: 0px 50px 0px 50px;
+    -moz-border-radius: 0px 50px 0px 50px;
+    -webkit-border-radius: 0px 50px 0px 50px;
+    border-width: 20px;
+    height: 100px;
+    width: 135px;
     z-index: 999!important;
     margin-bottom: 10px;
 }
 
-.userValues{
+.userValues {
     height: 100px;
 }
 
-.userPointValue{
+.userPointValue {
     color: #CE5848;
     font-size: 1.5rem;
     line-height: 1rem;
 }
 
-.userDollarValue{
+.userDollarValue {
     color: green;
     font-size: 1.5rem;
     line-height: 1rem;
@@ -61,95 +75,144 @@
     cursor: pointer;
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
-
 }
 
 label {
     display: inline-block;
     /* margin-bottom: .5rem; */
-   
 }
 
-.ac-custom input[type="checkbox"]:checked + label, .ac-custom input[type="radio"]:checked + label {
+.ac-custom input[type="checkbox"]:checked+label,
+.ac-custom input[type="radio"]:checked+label {
     color: #CE5848;
- 
 }
 
 .ac-custom li {
     margin: 0 auto;
-    padding: .2em 0; 
+    padding: .2em 0;
     position: relative;
 }
 
-
-.ac-custom input[type="checkbox"], .ac-custom input[type="radio"], .ac-custom label::before {
+.ac-custom input[type="checkbox"],
+.ac-custom input[type="radio"],
+.ac-custom label::before {
     background-color: #CE5848;
 }
 
-.error{
+.error {
     border: 2px solid red;
 }
 
-
-.profile-name-fix{
+.profile-name-fix {
     color: #CE5848;
     font-weight: bold;
     font-family: 'Bungee', cursive;
+    z-index: 999!important;
 }
 
-
-#home-button{
+#home-button {
     font-size: 2.5rem;
     color: #CE5848;
     margin-left: 3%;
     margin-top: 3%;
     z-index: 999;
     position: relative;
+    text-shadow: -.8px -.8px 0 #C6C6C6, .8px -.8px 0 #C6C6C6, -.8px .8px 0 #C6C6C6, .8px .8px 0 #C6C6C6;
 }
 
-
-
-#next-steps{
-    background-color: #F0F0F0;
+#next-steps {
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXWMQ5kIsIOw9Zpq4MZ19vMbQfYH2bOPxMU-wSXgXUGn17kidy");
+    background-size: 100%;
     -webkit-clip-path: polygon(48% 7%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 15%);
-  clip-path: polygon(48% 7%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 15%);
-  height: 20rem;
-  
-  }
+    clip-path: polygon(48% 7%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 15%);
+    height: 20rem;
+}
 
-
-  .form-label{
+.form-label {
     font-family: 'Bungee', cursive;
     color: #CE5848;
-  }
+}
 
-  .btn-primary{
+.btn-primary {
     background-color: white;
     color: #CE5848;
     border: 1px solid #CE5848;
-  }
+}
 
-  .btn-primary:hover{
+.btn-primary:hover {
     background-color: #C6C6C6;
     color: #CE5848;
     border: 1px solid #CE5848;
-  }
+}
 
-  .male{
-      border: 4px solid #5B92F5;
-  }
+.male {
+    border-color: white #4785F8;
+    border-image: none;
+    border-radius: 0px 50px 0px 50px;
+    -moz-border-radius: 0px 50px 0px 50px;
+    -webkit-border-radius: 0px 50px 0px 50px;
+    border-style: solid;
+    border-width: 8px;
+    height: 7rem;
+    width: 8rem;
+}
 
-  .female{
-      border: 4px solid pink;
-  }
+.female {
+    border-color: white pink;
+    border-image: none;
+    border-radius: 0px 50px 0px 50px;
+    -moz-border-radius: 0px 50px 0px 50px;
+    -webkit-border-radius: 0px 50px 0px 50px;
+    border-style: solid;
+    border-width: 8px;
+    height: 7rem;
+    width: 8rem;
+}
 
-  .modal-name{
+.modal-title {
+    margin-left: 28%
+}
+
+.modal-header {
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS89xQ8VzrSgmZJIkI8Ol_7jdZOVd7wXJgH222zuaANf6utn6Wv") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.modal-name {
     color: #CE5848;
     font-family: 'Bungee', cursive;
-  }
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
 
+#badge-display img {
+    height: 4rem;
+    width: 4rem;
+}
 
+.new-user-request:last-child {
+    margin-bottom: 30px;
+}
 
+.new-user-request:first-child {
+    margin-top: 30px;
+}
 
+.choreSection{
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/bgnoise_lg.png");
+    min-height: 550px;
+    z-index: 1;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-bottom: -70px;
+}
 
+.current-profile-name{
+    z-index: 999;
+}
 
+.profile-name-fix{
+    z-index: 999;
+}

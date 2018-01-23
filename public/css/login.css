@@ -7,6 +7,7 @@
     height: 100vh;
     -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 88%, 50% 100%, 0 87%, 0 0);
     clip-path: polygon(50% 0%, 100% 0, 100% 88%, 50% 100%, 0 87%, 0 0);
+    overflow: auto;
 }
 
 .website-title {
@@ -79,7 +80,10 @@
     z-index: 999
 }
 
-.first-image,.second-image,.third-image,.fourth-image {
+.first-image,
+.second-image,
+.third-image,
+.fourth-image {
     opacity: 0;
 }
 
@@ -90,19 +94,12 @@
 .loadingImage {
     height: 80px;
     width: 80px;
-    margin-top:-5px;
+    margin-top: -5px;
 }
 
-#background3 {
+#background3 {}
 
-}
-
-.points {
-}
-
-
-
-
+.points {}
 
 .button {
     position: relative;
@@ -120,100 +117,141 @@
     margin-left: auto;
     margin-right: auto;
     line-height: 4rem;
-  }
-  
-  .submit,
-  .arrow {
+}
+
+.submit,
+.arrow {
     display: inline-block;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     transition: all 0.2s ease;
-  }
-  
-  .submit {
+}
+
+.submit {
     text-transform: uppercase;
     margin: 14px 0 0 26px;
-  }
-  
-  .arrow {
+}
+
+.arrow {
     position: relative;
     top: -3px;
     opacity: 0;
-  }
-  
-  .line {
+}
+
+.line {
     height: 3px;
     width: 20px;
     border-radius: 6px;
     background: #fff;
-  }
-  
-  .top {
+}
+
+.top {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
-  
-  .bottom {
+}
+
+.bottom {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     transform: rotate(-45deg);
     margin-top: 10px;
-  }
+}
 
-  
-  .button:active {
+.button:active {
     -webkit-transform: scale(1.3);
     -moz-transform: scale(1.3);
     transform: scale(1.3);
-  }
-  
-  .button.hover .submit {
+}
+
+.button.hover .submit {
     -webkit-transform: translateX(-90px);
     -moz-transform: translateX(-90px);
     transform: translateX(-90px);
-    opacity: 0;	
-  }
-  
-  .button.hover .arrow {
+    opacity: 0;
+}
+
+.button.hover .arrow {
     -webkit-transform: translateX(-70px);
     -moz-transform: translateX(-70px);
     transform: translateX(-70px);
     opacity: 1;
-  }
-  
-  .button.active .arrow {
+}
+
+.button.active .arrow {
     opacity: 1;
     -webkit-transform: rotate(90deg) translateY(70px);
     -moz-transform: rotate(90deg) translateY(70px);
     transform: rotate(90deg) translateY(70px);
-  }
-  
-  .button.active {
+}
+
+.button.active {
     background: #4CAF50;
-  }
-  
-  .button.active .submit {
+}
+
+.button.active .submit {
     opacity: 0;
-  }
-  
-  .button.active .top {
+}
+
+.button.active .top {
     width: 34px;
-  }
-  
-  .button.active .bottom {
+}
+
+.button.active .bottom {
     margin: 14px 0 0 12px;
-  }
+}
 
+.fourth-background {
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/bgnoise_lg.png")
+}
 
-  .fourth-background{
-    background-color: #F0F0F0;
-  }
-
-  .chore-quote-1,.chore-quote-2,.chore-quote-3,.chore-quote-4{
+.chore-quote-1,
+.chore-quote-2,
+.chore-quote-3,
+.chore-quote-4 {
     opacity: 0;
-  }
+}
 
-  .points-text{
+.points-text {
     opacity: 0;
-  }
+}
+
+.blur1 {
+    -webkit-filter: blur(1.5px);
+    -moz-filter: blur(1.5px);
+    -o-filter: blur(1.5px);
+    -ms-filter: blur(1.5px);
+    filter: blur(1.5px);
+}
+
+.blur2 {
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.blur3 {
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+}
+
+.blur4 {
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+}
+
+.blur5 {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}

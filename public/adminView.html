@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SAC | Admin</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
-        crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One|Permanent+Marker|Yellowtail|Quattrocento+Sans|Bungee"
-        rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Black+Ops+One|Permanent+Marker|Yellowtail|Quattrocento+Sans|Bungee" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="./AnimatedCheckboxes/css/component.css">
     <link rel="stylesheet" href="./AnimatedCheckboxes/css/normalize.css">
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/adminView.css">
 
@@ -23,9 +21,178 @@
 <body>
 
 
-    
+    <!-- HEADER SECTION  -->
 
-   
+    <div id="header">
+        <div class="row">
+            <div class="col-12 text-left">
+                <a href="/">
+                    <i class="fa fa-home home-button" aria-hidden="true" id="home-button"></i>
+                </a>
+
+                <a href="/dashboard">
+                    <i class="fa fa-tachometer" aria-hidden="true" id="dashboard-button"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row" style="margin-top: -5%;">
+            <div class="col-12">
+                <h1 class="animation-target text-center main-title">Admin View</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row text-danger text-center" id="errorMessage">
+        <div class="col-12">
+            <h1>UNAUTHORIZED</h1>
+            <hr>
+        </div>
+
+        <div class="col-12 text-center">
+            <p>Your Not Supposed To Be Here</p>
+        </div>
+    </div>
+
+    <!-- END OF HEADER SECTION -->
+
+
+    <div class="container" id="main-content" style="margin-top: -7%">
+        <br>
+        <br>
+        <div class="row">
+
+
+            <!-- OPEN OF USERS COLUMN -->
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3 class="title text-center">Family Members</h3>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row" id="admin-users">
+
+
+                </div>
+
+            </div>
+
+
+            <!-- OPEN OF CHORES COLUMN -->
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3 class="title text-center">Finished Chores</h3>
+                        <hr>
+                    </div>
+                </div>
+                <div id="chores">
+
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- UPDATE USER ROLE MODAL SECTION -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body" id="test-content">
+                    <h3>Update User Role</h3>
+
+                    <form>
+                        <div class="form-group">
+                            <select class="form-control" id="newUserRole">
+                        <option>Admin</option>
+                        <option>Child</option>
+                      </select>
+                        </div>
+                    </form>
+                    <div class="h4" id="error-message"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary newRoleSubmit">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- CASH OUT MODAL -->
+
+    <div class="modal fade" id="cashOutModal" tabindex="-1" role="dialog" aria-labelledby="cashOutModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-center" id="cashOutModalContent">
+                    <h3 class="title">Cash Out</h3>
+
+                    <div class="row">
+                        <div class="col-6 text-center">
+                            <br>
+
+                            <div class="card userValues">
+                                <div class="card-header">
+                                    Points
+                                </div>
+                                <div class="card-body">
+                                    <!-- DYNAMICALLY ADD POINTS FROM DATABASE HERE -->
+                                    <p class="userPointValue count" id="userPoints">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 text-center">
+                            <br>
+
+                            <div class="card userValues">
+                                <div class="card-header">
+                                    Bank
+                                </div>
+                                <div class="card-body">
+                                    <!-- CONVERT POINTS TO DOLLAR VALUE HERE -->
+                                    <p style="color: green; font-size: 1.5rem; font-size: 1.5rem;">$<span class="userDollarValue count" id="userDollar">0</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12" id="message"></div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                    <div class = "newPointsSubmit" id="paypal-button-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -33,6 +200,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="./AnimatedCheckboxes/js/svgcheckbx.js"></script>
     <script src="./AnimatedCheckboxes/js/modernizr.custom.js"></script>
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/adminView.js"></script>
 </body>
